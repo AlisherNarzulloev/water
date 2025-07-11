@@ -1,10 +1,5 @@
-import type { FC } from "react";
 
-interface LogoProps {
-  className?: string;
-}
-
-const Logo: FC<LogoProps> = ({ className }) => (
+const Logo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="106" height="54" fill="none">
     <g clipPath="url(#a)">
       <g clipPath="url(#b)">

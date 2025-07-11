@@ -1,16 +1,15 @@
 import Image from "next/image";
-import type { FC } from "react";
 import LogoText from "../ui/logo-text";
 
-const HeroSection: FC = () => {
+const HeroSection = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
+    <section className="relative h-screen w-full flex items-center justify-center">
       <Image
-        src="/bg-without-flowers.png"
+        src="/bg-hero.png"
         alt="background"
         fill
         priority
-        className="object-cover z-0"
+        className="object-fit z-0 h-screen"
       />
       {/* 
       <Image

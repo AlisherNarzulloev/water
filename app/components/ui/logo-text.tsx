@@ -1,10 +1,4 @@
-import type { FC } from "react";
-
-interface LogoProps {
-  className?: string;
-}
-
-const LogoText: FC<LogoProps> = ({ className }) => (
+const LogoText = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="341"

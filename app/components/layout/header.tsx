@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { FC } from "react";
 import Logo from "../ui/logo";
 import ArrowIcon from "../ui/icons/arrow-top-right";
 
@@ -9,12 +8,12 @@ const NAV_ITEMS = [
   { label: "СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ", href: "#" },
 ];
 
-const Header: FC = () => {
+const Header = () => {
   return (
     <header className="w-full bg-white shadow z-30">
       <nav className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Logo className="h-10 w-auto" />
+          <Logo />
         </Link>
 
         <ul className="hidden md:flex gap-12 text-[15px] tracking-wider font-medium text-[#153A51]">

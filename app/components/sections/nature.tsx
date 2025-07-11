@@ -1,7 +1,4 @@
 import Image from "next/image";
-import { FC } from "react";
-
-interface Props {}
 
 const features = [
   { value: "15 тыс", label: "лет возраст источника" },
@@ -10,7 +7,7 @@ const features = [
   { value: "1991 год", label: "основания производства" },
 ];
 
-export const Nature: FC<Props> = () => {
+export const Nature = () => {
   return (
     <section className="relative w-full h-screen flex flex-col justify-between overflow-hidden px-8">
       <Image
