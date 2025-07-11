@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/layout/header";
 import localFont from "next/font/local";
 
 const aeronik = localFont({
@@ -41,10 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${aeronik.className} antialiased`}>
-        <Header />
-        {children}
-      </body>
+      <body className={`${aeronik.className} antialiased`}>{children}</body>
     </html>
   );
 }

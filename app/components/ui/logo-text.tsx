@@ -6,7 +6,7 @@ const LogoText = () => (
     viewBox="0 0 341 75"
     fill="none"
   >
-    <g clip-path="url(#clip0_839_1015)">
+    <g clipPath="url(#clip0_839_1015)">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

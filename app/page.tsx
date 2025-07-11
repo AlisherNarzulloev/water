@@ -1,11 +1,5 @@
-import HeroSection from "./components/sections/hero";
-import Nature from "./components/sections/nature";
+import ClientApp from "./components/layout/client-component";
 
 export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <Nature />
-    </>
-  );
+  return <ClientApp />;
 }
