@@ -10,13 +10,13 @@ const features = [
 
 interface NatureSectionProps {
   opacity: MotionValue<number>;
-  y: MotionValue<number>;
+  scale: MotionValue<number>;
 }
 
-const NatureSection = ({ opacity, y }: NatureSectionProps) => (
+const NatureSection = ({ opacity, scale }: NatureSectionProps) => (
   <motion.section
     className="fixed top-0 left-0 w-full h-screen z-40 pointer-events-none"
-    style={{ opacity, y }}
+    style={{ opacity, scale }}
   >
     <div className="relative w-full h-full flex flex-col justify-between overflow-hidden px-8">
       <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
@@ -24,7 +24,7 @@ const NatureSection = ({ opacity, y }: NatureSectionProps) => (
           src="/bg-nature.png"
           alt="Лесной фон"
           fill
-          className="object-cover select-none pointer-events-none"
+          className="object-fit select-none pointer-events-none"
           draggable={false}
           priority
         />
