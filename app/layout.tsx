@@ -1,31 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import localFont from "next/font/local";
+import { Mulish } from "next/font/google";
 
-const aeronik = localFont({
-  src: [
-    {
-      path: "./assets/font/AeonikPro-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "./assets/font/AeonikPro-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-
-    {
-      path: "./assets/font/AeonikPro-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./assets/font/AeonikPro-Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+const mulish = Mulish({
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${aeronik.className} antialiased`}>{children}</body>
+      <body className={`${mulish.className} antialiased scroll-smooth`}>
+        {children}
+      </body>
     </html>
   );
 }
