@@ -6,16 +6,8 @@ interface CaveSectionProps {
 }
 
 export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
-  const opacity = useTransform(
-    scrollYProgress,
-    [0.35, 0.4, 0.45, 0.5],
-    [0, 1, 1, 0]
-  );
-  const y = useTransform(
-    scrollYProgress,
-    [0.35, 0.4, 0.45, 0.5],
-    [100, 0, 0, -100]
-  );
+  const opacity = useTransform(scrollYProgress, [0.25, 0.29, 0.35], [0, 1, 0]);
+  const y = useTransform(scrollYProgress, [0.27, 0.29, 0.35], [100, 0, -100]);
 
   return (
     <div className="h-screen">

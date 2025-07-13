@@ -6,16 +6,8 @@ interface WaterSectionProps {
 }
 
 export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
-  const opacity = useTransform(
-    scrollYProgress,
-    [0.5, 0.55, 0.6, 0.65],
-    [0, 1, 1, 0]
-  );
-  const y = useTransform(
-    scrollYProgress,
-    [0.5, 0.55, 0.6, 0.65],
-    [100, 0, 0, -100]
-  );
+  const opacity = useTransform(scrollYProgress, [0.35, 0.37, 0.45], [0, 1, 0]);
+  const y = useTransform(scrollYProgress, [0.35, 0.37, 0.45], [100, 0, -100]);
 
   return (
     <div className="h-screen">

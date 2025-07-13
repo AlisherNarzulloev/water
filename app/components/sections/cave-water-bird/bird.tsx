@@ -6,12 +6,12 @@ interface BirdSectionProps {
 }
 
 export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
-  const opacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
-  const y = useTransform(
+  const opacity = useTransform(
     scrollYProgress,
-    [0.6, 0.7, 0.75, 0.85],
-    [100, 0, 0, -100]
+    [0.45, 0.47, 0.52, 0.55],
+    [0, 1, 1, 0]
   );
+  const y = useTransform(scrollYProgress, [0.45, 0.5], [100, 0]);
 
   return (
     <div className="h-[200vh]">
@@ -25,7 +25,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
         width={100}
         height={100}
         src={"/bird.webp"}
-        className="absolute bottom-96 2xl:bottom-0 scale-125 xl:-bottom-44 z-10 w-full h-fit"
+        className="absolute bottom-96 2xl:bottom-72 scale-125 xl:-bottom-44 z-10 w-full h-fit"
         alt="bird"
         unoptimized
       />

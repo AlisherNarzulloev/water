@@ -24,40 +24,62 @@ const features = [
 ];
 
 export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
-  const opacityClouds = useTransform(
-    scrollYProgress,
-    [0.75, 0.85, 0.95, 1],
-    [0, 1, 1, 0]
-  );
+  // const moveBuildingY = useTransform(
+  //   scrollYProgress,
+  //   [0.59, 0.63],
+  //   ["100%", "0%"]
+  // );
 
-  const moveBuildingY = useTransform(
-    scrollYProgress,
-    [0.8, 0.85],
-    ["100%", "0%"]
-  );
-  const moveBuildingBackY = useTransform(
-    scrollYProgress,
-    [0.8, 0.85],
-    ["130%", "0%"]
-  );
+  // const moveBuildingBackY = useTransform(
+  //   scrollYProgress,
+  //   [0.5, 0.62],
+  //   ["130%", "0%"]
+  // );
 
-  const opacityBackBuilding = useTransform(
-    scrollYProgress,
-    [0.8, 0.85],
-    [0, 1]
-  );
+  // const opacityBackBuilding = useTransform(
+  //   scrollYProgress,
+  //   [0.6, 0.65],
+  //   [0, 1]
+  // );
 
-  const opacityBgSky = useTransform(scrollYProgress, [0.7, 0.75], [0, 1]);
+  const opacityBgSky = useTransform(scrollYProgress, [0.6, 0.65], [0, 1]);
 
   const textBuildingY = useTransform(
     scrollYProgress,
-    [0.8, 0.9],
+    [0.58, 0.62],
     ["200%", "-10%"]
+  );
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.55, 0.6, 0.64, 0.67],
+    [0, 1, 1, 0]
+  );
+  const scale = useTransform(
+    scrollYProgress,
+    [0.5, 0.51, 0.6, 0.61],
+    [0, 5, 3, 1]
+  );
+
+  const x = useTransform(
+    scrollYProgress,
+    [0.5, 0.51, 0.6],
+    ["-100%", "-100%", "0%"]
+  );
+
+  const y = useTransform(
+    scrollYProgress,
+    [0.5, 0.51, 0.6],
+    ["100%", "100%", "0%"]
   );
   return (
     <>
-      <motion.div
+      {/* <motion.div
         style={{ y: moveBuildingY }}
+        className="h-screen fixed top-0 z-30 w-full"
+      > */}
+      <motion.div
+        style={{ scale, y, x, opacity }}
         className="h-screen fixed top-0 z-30 w-full"
       >
         <Image
@@ -70,7 +92,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
         />
       </motion.div>
       <motion.div
-        style={{ y: textBuildingY }}
+        style={{ y: textBuildingY, opacity }}
         className="fixed top-24 z-20 flex flex-col justify-between h-full w-full items-center px-8"
       >
         <div className="flex flex-col items-start leading-none -mt-8 xl:-mt-0">
@@ -82,13 +104,13 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
           </h1>
         </div>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         style={{ opacity: opacityBgSky }}
         className="bg-[#91afeb] h-screen w-full fixed top-0 z-10"
-      ></motion.div>
+      ></motion.div> */}
       <div className="h-screen">
         <motion.div
-          style={{ y: textBuildingY }}
+          style={{ y: textBuildingY, opacity }}
           className="fixed -bottom-20 z-30 h-full pb-12 w-full items-center px-8 text-white"
         >
           <div className="self-end max-w-3/5 absolute top-1/2 -translate-y-1/2 left-4 xl:left-8 p-4 backdrop-blur-[6px] rounded-2xl overflow-hidden -mt-16 xl:mt-7">
@@ -123,8 +145,12 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
         </motion.div>
       </div>
 
-      <motion.div
+      {/* <motion.div
         style={{ y: moveBuildingBackY, opacity: opacityBackBuilding }}
+        className="h-screen w-full fixed top-0 z-10 "
+      > */}
+      <motion.div
+        style={{ scale, y, x, opacity }}
         className="h-screen w-full fixed top-0 z-10 "
       >
         <Image
@@ -136,11 +162,11 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
           unoptimized
         />
       </motion.div>
-
+      {/* 
       <motion.div
         style={{ opacity: opacityClouds }}
         className="h-[200vh] w-full fixed top-0"
-      ></motion.div>
+      ></motion.div> */}
     </>
   );
 }

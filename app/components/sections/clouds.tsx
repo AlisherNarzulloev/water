@@ -8,42 +8,42 @@ interface CloudsSectionProps {
 export default function CloudsSection({ scrollYProgress }: CloudsSectionProps) {
   const cloudScale1 = useTransform(
     scrollYProgress,
-    [0.75, 0.85, 0.95, 1],
+    [0.6, 0.65, 0.7, 75],
     [2, 0.7, 0.7, 0.3]
   );
   const cloudeMoveX1 = useTransform(
     scrollYProgress,
-    [0.8, 0.85],
+    [0.6, 0.62],
     ["0%", "-30%"]
   );
   const cloudeMoveY1 = useTransform(
     scrollYProgress,
-    [0.83, 0.87],
+    [0.6, 0.65],
     ["0%", "-100%"]
   );
 
   const cloudeMoveX2 = useTransform(
     scrollYProgress,
-    [0.8, 0.85],
+    [0.56, 0.62],
     ["0%", "30%"]
   );
   const cloudeMoveY2 = useTransform(
     scrollYProgress,
-    [0.83, 0.87],
+    [0.56, 0.59],
     ["0%", "-100%"]
   );
 
-  const cloudeMoveX3 = useTransform(scrollYProgress, [0.8, 0.85], ["0%", "0%"]);
+  const cloudeMoveX3 = useTransform(scrollYProgress, [0.6, 0.65], ["0%", "0%"]);
   const cloudeMoveY3 = useTransform(
     scrollYProgress,
-    [0.83, 0.87],
+    [0.6, 0.65],
     ["0%", "-100%"]
   );
 
   const opacityClouds = useTransform(
     scrollYProgress,
-    [0.75, 0.85, 0.95, 1],
-    [0, 1, 1, 0]
+    [0.55, 0.58, 0.65],
+    [0, 1, 0]
   );
 
   return (

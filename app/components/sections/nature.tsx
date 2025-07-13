@@ -17,8 +17,17 @@ export default function NatureSection({
   scrollYProgress,
   curtainProgress,
 }: NatureSectionProps) {
-  const opacity = useTransform(curtainProgress, [0.9, 1, 1.4], [0, 1, 0]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.05, 0.1, 0.15, 0.2],
+    [0, 1, 1, 0]
+  );
   const scale = useTransform(scrollYProgress, [0, 0.05], [0.9, 1]);
+  const y = useTransform(
+    scrollYProgress,
+    [0.05, 0.1, 0.15, 0.2],
+    ["100%", "0%", "0%", "-100%"]
+  );
 
   return (
     <motion.section
@@ -37,21 +46,24 @@ export default function NatureSection({
             unoptimized
           />
         </div>
-        <div className="relative z-20 flex justify-center">
+        <motion.div style={{ y }} className="relative z-20 flex justify-center">
           <h1 className="text-white text-[160px] xl:text-[17vw] xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 w-full">
             <span className="pr-8">ПРИР</span>
             <span className="pl-8">ДНАЯ</span>
           </h1>
-        </div>
+        </motion.div>
         <div className="relative z-50 flex flex-row justify-between items-start h-full w-full mt-6">
-          <div className="max-w-1/3 px-8 text-white text-xl xl:text-3xl 2xl:text-5xl p-4 backdrop-blur-[6px] rounded-2xl">
+          <motion.div
+            style={{ y }}
+            className="max-w-1/3 px-8 text-white text-xl xl:text-3xl 2xl:text-5xl p-4 backdrop-blur-[6px] rounded-2xl"
+          >
             <p>
               <span className="text-2xl xl:text-5xl 2xl:text-7xl font-semibold">
                 TURAN
-              </span>{" "}
+              </span>
               — это природная минеральная вода, рожденная из глубин веков.
             </p>
-          </div>
+          </motion.div>
           <div className="absolute top-1/3 left-1/2 -translate-1/2">
             <Image
               src="/turan-text.png"
@@ -62,7 +74,10 @@ export default function NatureSection({
               priority
             />
           </div>
-          <div className="self-end text-sm xl:text-base 2xl:text-2xl max-w-1/3 px-8 text-white leading-relaxed p-4 backdrop-blur-[6px] rounded-2xl mb-8">
+          <motion.div
+            style={{ y }}
+            className="self-end text-sm xl:text-base 2xl:text-2xl max-w-1/3 px-8 text-white leading-relaxed p-4 backdrop-blur-[6px] rounded-2xl mb-8"
+          >
             <p className="text-right font-bold">
               Она берет свое начало в заповедной зоне Кокшетауской
               возвышенности, где на глубине более 100 метров скрыт реликтовый
@@ -73,9 +88,12 @@ export default function NatureSection({
               искусственных добавок, без внешнего воздействия — только идеальный
               баланс, созданный самой природой.
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className="relative w-full grid grid-cols-4 z-30 gap-8 pb-4 xl:pb-10">
+        <motion.div
+          style={{ y }}
+          className="relative w-full grid grid-cols-4 z-30 gap-8 pb-4 xl:pb-10"
+        >
           {features.map((f) => (
             <div
               key={f.value}
@@ -89,7 +107,7 @@ export default function NatureSection({
               </span>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );

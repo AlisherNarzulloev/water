@@ -6,9 +6,9 @@ interface CurtainsProps {
 }
 
 export default function Curtains({ scrollYProgress }: CurtainsProps) {
-  const leftX = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
-  const rightX = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1.5, 1]);
+  const leftX = useTransform(scrollYProgress, [0, 0.2], ["-100%", "0%"]);
+  const rightX = useTransform(scrollYProgress, [0, 0.2], ["100%", "0%"]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1.5, 1]);
 
   return (
     <div className="fixed top-0 left-0 w-full h-screen z-20 pointer-events-none">

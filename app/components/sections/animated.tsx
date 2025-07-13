@@ -8,6 +8,9 @@ import Header from "../layout/header";
 import CaveWaterBird from "./cave-water-bird/cave-water-bird";
 import CloudsSection from "./clouds";
 import KazakhSection from "./kazakh";
+import UsefulSection from "./useful";
+import SecureSection from "./secure";
+import AwardSection from "./award";
 
 export default function AnimatedSections() {
   const ref = useRef<HTMLDivElement>(null);
@@ -18,14 +21,14 @@ export default function AnimatedSections() {
 
   const curtainProgress = useTransform(
     scrollYProgress,
-    [0.01, 0.2, 0.3, 0.4],
+    [0.01, 0.1, 0.2, 0.25],
     [0, 1, 1, 0]
   );
 
   return (
     <div
       ref={ref}
-      className="relative w-full h-[1000vh] bg-white overflow-hidden"
+      className="relative w-full h-[1400vh] bg-white overflow-hidden"
     >
       <Header scrollYProgress={scrollYProgress} />
       <HeroSection scrollYProgress={scrollYProgress} />
@@ -35,8 +38,11 @@ export default function AnimatedSections() {
         curtainProgress={curtainProgress}
       />
       <CaveWaterBird scrollYProgress={scrollYProgress} />
-      <CloudsSection scrollYProgress={scrollYProgress} />
+      {/* <CloudsSection scrollYProgress={scrollYProgress} /> */}
       <KazakhSection scrollYProgress={scrollYProgress} />
+      <UsefulSection scrollYProgress={scrollYProgress} />
+      <SecureSection scrollYProgress={scrollYProgress} />
+      <AwardSection scrollYProgress={scrollYProgress} />
       <div className="h-[100vh]" />
     </div>
   );

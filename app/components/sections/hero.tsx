@@ -8,12 +8,8 @@ interface HeroSectionProps {
 
 export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
   const scale = useTransform(scrollYProgress, [0, 0.05], [1, 2]);
-  const opacity = useTransform(scrollYProgress, [0, 0.05, 0.07], [1, 1, 0]);
-  const overlayOpacity = useTransform(
-    scrollYProgress,
-    [0.01, 0.05, 0.07],
-    [0, 1, 1]
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+
   return (
     <motion.section
       className="fixed top-0 left-0 w-full h-screen z-20 pointer-events-none"
@@ -39,10 +35,6 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
           <LogoText />
         </div>
       </div>
-      <motion.div
-        className="absolute inset-0 bg-white z-50 pointer-events-none"
-        style={{ opacity: overlayOpacity }}
-      />
     </motion.section>
   );
 }

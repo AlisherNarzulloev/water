@@ -11,44 +11,43 @@ interface CaveWaterBirdSectionProps {
 export default function CaveWaterBird({
   scrollYProgress,
 }: CaveWaterBirdSectionProps) {
-  const opacity = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
-
-  const scale = useTransform(scrollYProgress, [0.7, 0.8, 0.9, 1], [1, 4, 0, 0]);
-
-  const x = useTransform(scrollYProgress, [0.7, 0.8], ["0%", "-150%"]);
-
-  const y = useTransform(
+  const opacity = useTransform(
     scrollYProgress,
-    [0.7, 0.8, 0.9, 1],
-    ["0%", "-250%", "-220%", "400%"]
+    [0.22, 0.28, 0.5, 0.55],
+    [0, 1, 1, 0]
   );
 
+  const scale = useTransform(
+    scrollYProgress,
+    [0.49, 0.6, 0.7, 75],
+    [1, 3, 0, 0]
+  );
+
+  const x = useTransform(scrollYProgress, [0.49, 0.6], ["0%", "-100%"]);
+
+  const y = useTransform(scrollYProgress, [0.49, 0.55], ["0%", "-20%"]);
+
   return (
-    <motion.div
+    <motion.section
       style={{
         scale,
         x,
         y,
         opacity,
       }}
-      className="relative z-10"
+      className="sticky top-[310vh] w-full h-[500vh] z-0 pointer-events-none overflow-hidden"
     >
-      <motion.section
-        className="relative top-[310vh] w-full h-[500vh] z-0 pointer-events-none overflow-hidden"
-        style={{ opacity }}
-      >
-        <Image
-          width={100}
-          height={100}
-          className="select-none pointer-events-none h-full w-full"
-          src={"/bg-without-bird.webp"}
-          alt="bg-cave-water-bird"
-          unoptimized
-        />
-        <CaveSection scrollYProgress={scrollYProgress} />
-        <WaterSection scrollYProgress={scrollYProgress} />
-        <BirdSection scrollYProgress={scrollYProgress} />
-      </motion.section>
-    </motion.div>
+      <Image
+        width={100}
+        height={100}
+        className="select-none pointer-events-none h-full w-full"
+        src={"/bg-without-bird.webp"}
+        alt="bg-cave-water-bird"
+        unoptimized
+      />
+      <CaveSection scrollYProgress={scrollYProgress} />
+      <WaterSection scrollYProgress={scrollYProgress} />
+      <BirdSection scrollYProgress={scrollYProgress} />
+    </motion.section>
   );
 }
