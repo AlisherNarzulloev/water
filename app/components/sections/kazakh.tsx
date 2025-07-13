@@ -61,7 +61,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
         className="h-screen fixed top-0 z-30 w-full"
       >
         <Image
-          src={"/kazakh_building.png"}
+          src={"/kazakh_building.webp"}
           width={100}
           height={100}
           alt="building"
@@ -126,7 +126,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
         className="h-screen w-full fixed top-0 z-10 "
       >
         <Image
-          src={"/kazakh_back.jpg"}
+          src={"/kazakh_back.webp"}
           width={100}
           height={100}
           alt="building"

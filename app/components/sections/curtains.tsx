@@ -17,7 +17,7 @@ export default function Curtains({ scrollYProgress }: CurtainsProps) {
         style={{ x: leftX, scale }}
       >
         <Image
-          src="/left.png"
+          src="/left.webp"
           alt="Лес левая часть"
           fill
           className="object-cover w-full h-full select-none pointer-events-none"
@@ -30,7 +30,7 @@ export default function Curtains({ scrollYProgress }: CurtainsProps) {
         style={{ x: rightX, scale }}
       >
         <Image
-          src="/right.png"
+          src="/right.webp"
           alt="Лес правая часть"
           fill
           className="object-cover w-full h-full select-none pointer-events-none"

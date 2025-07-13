@@ -28,7 +28,7 @@ export default function NatureSection({
       <div className="relative w-full h-full flex flex-col justify-between overflow-hidden px-8">
         <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
           <Image
-            src="/bg-nature.png"
+            src="/bg-nature.webp"
             alt="Лесной фон"
             fill
             className="object-contain xl:object-fit select-none pointer-events-none"
