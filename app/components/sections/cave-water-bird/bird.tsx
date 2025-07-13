@@ -25,7 +25,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
         width={100}
         height={100}
         src={"/bird.webp"}
-        className="absolute top-16 scale-125  xl:-bottom-44 z-10 w-full h-fit"
+        className="absolute bottom-96 scale-125 xl:-bottom-44 z-10 w-full h-fit"
         alt="bird"
         unoptimized
       />
