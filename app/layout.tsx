@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Mulish } from "next/font/google";
 import localFont from "next/font/local";
-
-const mulish = Mulish({
-  subsets: ["latin"],
-});
 
 const engravers = localFont({ src: "./assets/font/engravers-regular.otf" });
 
