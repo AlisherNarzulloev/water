@@ -24,7 +24,7 @@ const Header = ({ y }: HeaderProps) => (
         <Logo />
       </Link>
 
-      <ul className="hidden md:flex gap-12 text-[15px] tracking-wider font-medium text-[#153A51]">
+      <ul className="hidden md:flex gap-12 tracking-wider font-medium text-[#153A51]">
         {NAV_ITEMS.map((item) => (
           <li key={item.label}>
             <Link href={item.href} className="hover:text-cyan-700 transition">

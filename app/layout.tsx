@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Mulish } from "next/font/google";
+import localFont from "next/font/local";
 
 const mulish = Mulish({
   subsets: ["latin"],
 });
+
+const engravers = localFont({ src: "./assets/font/engravers-regular.otf" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mulish.className} antialiased scroll-smooth`}>
+      <body className={`${engravers.className} antialiased scroll-smooth`}>
         {children}
       </body>
     </html>
