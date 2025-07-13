@@ -38,15 +38,17 @@ export default function NatureSection({
           />
         </div>
         <div className="relative z-20 flex justify-center">
-          <h1 className="text-white text-[160px] xl:text-[320px]  xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 w-full">
+          <h1 className="text-white text-[160px] xl:text-[17vw] xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 w-full">
             <span className="pr-8">ПРИР</span>
             <span className="pl-8">ДНАЯ</span>
           </h1>
         </div>
         <div className="relative z-50 flex flex-row justify-between items-start h-full w-full mt-6">
-          <div className="max-w-[380px] xl:max-w-[600px] px-8 text-white text-xl xl:text-3xl p-4 backdrop-blur-[6px] rounded-2xl">
+          <div className="max-w-1/3 px-8 text-white text-xl xl:text-3xl 2xl:text-5xl p-4 backdrop-blur-[6px] rounded-2xl">
             <p>
-              <span className="text-2xl xl:text-5xl font-semibold">TURAN</span>{" "}
+              <span className="text-2xl xl:text-5xl 2xl:text-7xl font-semibold">
+                TURAN
+              </span>{" "}
               — это природная минеральная вода, рожденная из глубин веков.
             </p>
           </div>
@@ -60,7 +62,7 @@ export default function NatureSection({
               priority
             />
           </div>
-          <div className="self-end text-sm xl:text-base max-w-[380px] px-8 text-white leading-relaxed p-4 backdrop-blur-[6px] rounded-2xl mb-8">
+          <div className="self-end text-sm xl:text-base 2xl:text-2xl max-w-1/3 px-8 text-white leading-relaxed p-4 backdrop-blur-[6px] rounded-2xl mb-8">
             <p className="text-right font-bold">
               Она берет свое начало в заповедной зоне Кокшетауской
               возвышенности, где на глубине более 100 метров скрыт реликтовый
@@ -73,14 +75,18 @@ export default function NatureSection({
             </p>
           </div>
         </div>
-        <div className="relative w-full grid grid-cols-4 z-30 gap-8">
+        <div className="relative w-full grid grid-cols-4 z-30 gap-8 pb-4 xl:pb-10">
           {features.map((f) => (
             <div
               key={f.value}
               className="px-8 py-4 flex flex-col items-center text-white p-4 backdrop-blur-[6px] rounded-2xl text-center"
             >
-              <span className="text-3xl xl:text-6xl font-bold">{f.value}</span>
-              <span className="text-base xl:text-lg opacity-80">{f.label}</span>
+              <span className="text-3xl xl:text-6xl 2xl:text-7xl font-bold">
+                {f.value}
+              </span>
+              <span className="text-base xl:text-lg 2xl:text-2xl opacity-80">
+                {f.label}
+              </span>
             </div>
           ))}
         </div>
