@@ -73,11 +73,11 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
         style={{ y: textBuildingY }}
         className="fixed top-24 z-20 flex flex-col justify-between h-full w-full items-center px-8"
       >
-        <div className="flex flex-col items-start leading-none">
-          <h1 className="text-white text-[130px] font-extrabold tracking-widest select-none pointer-events-none leading-none -ml-5">
+        <div className="flex flex-col items-start leading-none -mt-8 xl:-mt-0">
+          <h1 className="text-white text-[100px] xl:text-[130px] font-extrabold tracking-widest select-none pointer-events-none leading-none -ml-5">
             100%
           </h1>
-          <h1 className="text-white text-[210px] font-extrabold tracking-widest select-none pointer-events-none leading-none -mt-20">
+          <h1 className="text-white text-[110px] xl:text-[210px] font-extrabold tracking-widest select-none pointer-events-none leading-none -mt-10 xl:-mt-20">
             КАЗАХСТАНСКАЯ
           </h1>
         </div>
@@ -91,8 +91,8 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
           style={{ y: textBuildingY }}
           className="fixed -bottom-20 z-30 h-full pb-12 w-full items-center px-8 text-white"
         >
-          <div className="self-end max-w-2xl absolute top-1/2 -translate-y-1/2 left-8 p-4 backdrop-blur-[6px] rounded-2xl overflow-hidden">
-            <p className="font-bold text-2xl">
+          <div className="self-end max-w-2xl absolute top-1/2 -translate-y-1/2 left-4 xl:left-8 p-4 backdrop-blur-[6px] rounded-2xl overflow-hidden -mt-16 xl:-mt-0">
+            <p className="font-bold text-lg xl:text-2xl">
               Локальность как принцип. Независимость как выбор. TURAN — это не
               просто вода с казахстанским адресом на этикетке. Это продукт, в
               котором всё, без исключений, — казахстанского происхождения. Не на
@@ -105,14 +105,14 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
               отличие от лидера списка TURAN доступен всем желающим.
             </p>
           </div>
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full px-8 grid grid-cols-3 gap-8 z-30">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full px-8 grid grid-cols-3 gap-4 xl:gap-8 z-30">
             {features.map((f) => (
               <div
                 key={f.value}
                 className="px-8 py-4 flex flex-col items-center text-white backdrop-blur-sm rounded-2xl overflow-hidden"
               >
-                <span className="text-3xl font-bold">{f.value}</span>
-                <span className="text-lg opacity-80 text-center font-medium">
+                <span className="text-xl xl:text-3xl font-bold">{f.value}</span>
+                <span className="text-base xl:text-lg opacity-80 text-center font-medium leading-tight">
                   {f.label}
                 </span>
               </div>

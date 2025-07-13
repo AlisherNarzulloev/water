@@ -17,7 +17,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
     <div className="h-[200vh]">
       <motion.h1
         style={{ opacity, y }}
-        className="fixed top-0 left-1/2 -mt-10 -translate-x-1/2 text-white text-[160px] font-extrabold tracking-widest select-none pointer-events-none leading-none z-0"
+        className="fixed top-0 left-1/2 xl:-mt-10 -translate-x-1/2 text-white text-[85px] xl:text-[160px] font-extrabold tracking-widest select-none pointer-events-none leading-none z-0"
       >
         СБАЛАНСИРОВАННАЯ
       </motion.h1>
@@ -25,7 +25,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
         width={100}
         height={100}
         src={"/bird.png"}
-        className="absolute -bottom-44 z-10 w-full h-fit"
+        className="absolute top-16 scale-125  xl:-bottom-44 z-10 w-full h-fit"
         alt="bird"
         unoptimized
       />

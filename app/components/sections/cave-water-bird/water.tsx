@@ -25,10 +25,10 @@ export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
       >
         <Heading>ЖИВАЯ</Heading>
 
-        <div className="self-start max-w-2xl text-left font-bold p-4 backdrop-blur-md rounded-2xl text-white">
-          <p className=" text-3xl">
-            <span className="text-5xl">TURAN</span> — это вода, которая
-            сохраняет всё, чем её наделила природа
+        <div className="self-start max-w-2xl text-left font-bold p-4 backdrop-blur-md rounded-2xl text-white -mt-24 xl:-mt-0">
+          <p className="text-base xl:text-3xl">
+            <span className="text-2xl xl:text-5xl">TURAN</span> — это вода,
+            которая сохраняет всё, чем её наделила природа
           </p>
           <p>
             Её уникальность — в абсолютной чистоте, поэтому она не требует
