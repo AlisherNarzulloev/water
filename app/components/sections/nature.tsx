@@ -15,8 +15,8 @@ interface NatureSectionProps {
 
 export default function NatureSection({
   scrollYProgress,
-  curtainProgress,
-}: NatureSectionProps) {
+}: // curtainProgress,
+NatureSectionProps) {
   const opacity = useTransform(
     scrollYProgress,
     [0.05, 0.1, 0.15, 0.2],

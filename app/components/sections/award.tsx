@@ -1,6 +1,5 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
-import LogoText from "../ui/logo-text";
 import Heading from "../ui/heading";
 import MenuButton from "../ui/menu-button";
 
@@ -16,11 +15,11 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
     [0.84, 0.85],
     ["100%", "0%"]
   );
-  const moveTextY = useTransform(
-    scrollYProgress,
-    [0.84, 0.85, 0.86, 0.88],
-    ["100%", "0%", "0%", "-100%"]
-  );
+  //   const moveTextY = useTransform(
+  //     scrollYProgress,
+  //     [0.84, 0.85, 0.86, 0.88],
+  //     ["100%", "0%", "0%", "-100%"]
+  //   );
   const moveAwardY1 = useTransform(
     scrollYProgress,
     [0.85, 0.87, 0.88, 0.9],
@@ -46,10 +45,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
       style={{ opacity }}
       className="fixed top-0 h-full w-full flex items-center justify-center opacity-90"
     >
-      <motion.div
-        // style={{ y: moveTextY }}
-        className="relative left-[2.5vw] w-full h-screen z-10 mt-40"
-      >
+      <motion.div className="relative left-[2.5vw] w-full h-screen z-10 mt-40">
         <Heading className="!text-[8vw] p-4e !text-black">
           СЕРТИФИЦИРОВАННАЯ
         </Heading>

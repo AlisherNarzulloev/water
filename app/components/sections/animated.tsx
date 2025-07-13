@@ -6,7 +6,7 @@ import Curtains from "./curtains";
 import NatureSection from "./nature";
 import Header from "../layout/header";
 import CaveWaterBird from "./cave-water-bird/cave-water-bird";
-import CloudsSection from "./clouds";
+// import CloudsSection from "./clouds";
 import KazakhSection from "./kazakh";
 import UsefulSection from "./useful";
 import SecureSection from "./secure";
