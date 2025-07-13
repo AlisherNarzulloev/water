@@ -1,18 +1,19 @@
-import { motion, MotionValue } from "framer-motion";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 import LogoText from "../ui/logo-text";
 
 interface HeroSectionProps {
-  scale: MotionValue<number>;
-  opacity: MotionValue<number>;
-  overlayOpacity: MotionValue<number>;
+  scrollYProgress: MotionValue<number>;
 }
 
-export default function HeroSection({
-  scale,
-  opacity,
-  overlayOpacity,
-}: HeroSectionProps) {
+export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
+  const scale = useTransform(scrollYProgress, [0, 0.05], [1, 2]);
+  const opacity = useTransform(scrollYProgress, [0, 0.05, 0.07], [1, 1, 0]);
+  const overlayOpacity = useTransform(
+    scrollYProgress,
+    [0.01, 0.05, 0.07],
+    [0, 1, 1]
+  );
   return (
     <motion.section
       className="fixed top-0 left-0 w-full h-screen z-20 pointer-events-none"
