@@ -7,12 +7,6 @@ interface UsefulSectionProps {
 }
 
 export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
-  //   const cloudMoveY1 = useTransform(
-  //     scrollYProgress,
-  //     [0.67, 0.7],
-  //     ["100%", "00%"]
-  //   );
-
   const bgMoveY = useTransform(scrollYProgress, [0.6, 0.65], ["100%", "0%"]);
 
   const bgOpacity = useTransform(
@@ -35,23 +29,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
   );
 
   return (
-    <motion.div
-      style={{ opacity: bgOpacity }}
-      className="h-[200vh] fixed top-0 left-0"
-    >
-      {/* <motion.div
-        style={{ y: cloudMoveY1 }}
-        className="fixed top-0 left-0 w-full h-screen"
-      >
-        <Image
-          src={"/cloud8.webp"}
-          width={100}
-          height={100}
-          alt="cloud4"
-          className="w-full h-screen object-cover"
-          unoptimized
-        />
-      </motion.div> */}
+    <motion.div style={{ opacity: bgOpacity }} className="h-[200vh] relative">
       <motion.div
         style={{ y: bgMoveY, opacity: bgOpacity }}
         className="fixed top-0 left-0 w-full h-screen z-10"
@@ -80,7 +58,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
       </motion.div>
       <motion.div
         style={{ y: moveTextY }}
-        className="relative left-[2.5vw] w-full h-screen z-10 mt-8"
+        className="fixed left-[2.5vw] w-full z-10 top-10"
       >
         <Heading className="!text-[17vw]">ПОЛЕЗНАЯ</Heading>
       </motion.div>

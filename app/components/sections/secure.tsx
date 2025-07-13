@@ -80,7 +80,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
       </motion.div>
       <motion.div
         style={{ y: moveTextY }}
-        className="relative left-[2.5vw] w-full h-screen z-10 mt-8"
+        className="fixed left-[2.5vw] w-full z-10 top-16"
       >
         <Heading className="!text-[13.5vw]">БЕЗОПАСНАЯ</Heading>
       </motion.div>

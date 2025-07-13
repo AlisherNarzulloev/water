@@ -45,7 +45,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
       style={{ opacity }}
       className="fixed top-0 h-full w-full flex items-center justify-center opacity-90"
     >
-      <motion.div className="relative left-[2.5vw] w-full h-screen z-10 mt-40">
+      <motion.div className="fixed left-[2.5vw] w-full z-10 top-24">
         <Heading className="!text-[8vw] p-4e !text-black">
           СЕРТИФИЦИРОВАННАЯ
         </Heading>
@@ -211,7 +211,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
       </motion.div>
       <motion.div
         style={{ opacity: opacityButtons, y: moveButtonsY }}
-        className="text-right fixed bottom-0 h-fit z-20 p-8 right-4 w-full"
+        className="text-right fixed bottom-10 h-fit z-20 p-8 right-4 w-full"
       >
         <div className="w-full flex justify-between gap-8 items-center px-8 py-2">
           <div className="flex flex-col gap-4">
