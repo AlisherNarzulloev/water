@@ -42,7 +42,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
   //   [0, 1]
   // );
 
-  const opacityBgSky = useTransform(scrollYProgress, [0.6, 0.65], [0, 1]);
+  // const opacityBgSky = useTransform(scrollYProgress, [0.6, 0.65], [0, 1]);
 
   const textBuildingY = useTransform(
     scrollYProgress,
