@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 
-const engravers = localFont({ src: "./assets/font/engravers-regular.otf" });
+const engravers = localFont({ src: "./assets/font/EngraversGothic.ttf" });
 
 export const metadata: Metadata = {
   title: "Create Next App",

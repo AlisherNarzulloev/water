@@ -31,7 +31,7 @@ const NatureSection = ({ opacity, scale }: NatureSectionProps) => (
         />
       </div>
       <div className="relative z-20 flex justify-center">
-        <h1 className="text-white text-[240px] scale-95 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-20 w-full">
+        <h1 className="text-white text-[320px] -mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-20 w-full">
           <span className="pr-8">ПРИР</span>
           <span className="pl-8">ДНАЯ</span>
         </h1>

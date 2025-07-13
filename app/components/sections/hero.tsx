@@ -30,7 +30,7 @@ export default function HeroSection({
           <div className="text-[#05A8E2] text-lg tracking-widest mb-1 uppercase">
             ЕДИНСТВЕННАЯ В КАЗАХСТАНЕ
           </div>
-          <h1 className="text-4xl lg:text-5xl font-medium text-[#153A51] leading-tight mb-2 text-center">
+          <h1 className="text-4xl lg:text-5xl font-medium text-[#153A51] leading-none mb-2 text-center">
             ПРИРОДНАЯ ЛЕГКАЯ
             <br />
             ЖИВАЯ ВОДА

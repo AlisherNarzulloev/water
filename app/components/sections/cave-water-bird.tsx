@@ -1,5 +1,6 @@
 import { motion, MotionValue } from "framer-motion";
 import Image from "next/image";
+import Heading from "../ui/heading";
 
 interface CaveWaterBirdSectionProps {
   opacity: MotionValue<number>;
@@ -39,10 +40,8 @@ export default function CaveWaterBird({
           style={{ opacity: textOneOpacity, y: textOneY }}
           className="fixed top-0 z-20 flex flex-col justify-between h-full pb-12 w-full items-center px-8"
         >
-          <h1 className="text-white text-[180px] md:text-[400px] font-extrabold tracking-tight select-none pointer-events-none leading-none">
-            ЛЕГКАЯ
-          </h1>
-          <div className="self-end max-w-4xl text-right p-4 backdrop-blur-md rounded-2xl">
+          <Heading>ЛЕГКАЯ</Heading>
+          <div className="self-end max-w-4xl text-right p-4 backdrop-blur-md rounded-2xl text-white">
             <p className="font-bold text-3xl">
               Природная минеральная вода TURAN добывается из источника Бұқпа на
               месторождении Кусколь - одном из 5 редких источников легкой воды
@@ -54,7 +53,7 @@ export default function CaveWaterBird({
               отличие от лидера списка TURAN доступен всем желающим.
             </p>
           </div>
-          <p className="max-w-[454px] self-start p-4 backdrop-blur-md rounded-2xl font-bold">
+          <p className="max-w-[454px] text-lg self-start p-4 backdrop-blur-md rounded-2xl font-bold text-white">
             Легкая вода — это научный термин, описывающий воду с низким
             содержанием дейтерия (тяжелого водорода). Она не создаётся
             искусственно, а добывается в местах с особой геологией и
@@ -68,10 +67,9 @@ export default function CaveWaterBird({
           style={{ opacity: textTwoOpacity, y: textTwoY }}
           className="fixed top-0 z-20 flex flex-col justify-between h-full pb-12 w-full items-center px-8"
         >
-          <h1 className="text-white text-[180px] md:text-[400px] font-extrabold tracking-tight select-none pointer-events-none leading-none">
-            ЖИВАЯ
-          </h1>
-          <div className="self-start max-w-2xl text-left font-bold p-4 backdrop-blur-md rounded-2xl">
+          <Heading>ЖИВАЯ</Heading>
+
+          <div className="self-start max-w-2xl text-left font-bold p-4 backdrop-blur-md rounded-2xl text-white">
             <p className=" text-3xl">
               <span className="text-5xl">TURAN</span> — это вода, которая
               сохраняет всё, чем её наделила природа
@@ -85,7 +83,7 @@ export default function CaveWaterBird({
               минерализацией. Её формула создана природой и подтверждена наукой
             </p>
           </div>
-          <p className="max-w-2xl self-end text-right p-4 backdrop-blur-md rounded-2xl">
+          <p className="max-w-2xl text-lg font-bold self-end text-right p-4 backdrop-blur-md rounded-2xl text-white">
             TURAN — вода, которую не создают, а бережно сохраняют. Без осмоса.
             Без химии. Без добавок. Только механическая очистка и природная
             формула, нетронутая временем.
@@ -95,7 +93,7 @@ export default function CaveWaterBird({
       <div className="h-[200vh]">
         <motion.h1
           style={{ opacity: textThreeOpacity, y: textThreeY }}
-          className="fixed top-8 left-1/2 -translate-x-1/2 text-white text-[180px] md:text-[150px] font-extrabold tracking-tight select-none pointer-events-none leading-none z-0"
+          className="fixed top-0 left-1/2 -mt-10 -translate-x-1/2 text-white text-[160px] font-extrabold tracking-widest select-none pointer-events-none leading-none z-0"
         >
           СБАЛАНСИРОВАННАЯ
         </motion.h1>
@@ -110,7 +108,7 @@ export default function CaveWaterBird({
         <div className="fixed top-0 z-20 h-full pb-12 w-full px-8">
           <motion.p
             style={{ opacity: textThreeOpacity, y: textThreeY }}
-            className="self-end max-w-xl font-bold text-right absolute top-1/2 -translate-y-1/2 right-8 z-10 p-4 backdrop-blur-[6px] rounded-2xl"
+            className="self-end max-w-xl font-bold text-right absolute top-1/2 -translate-y-1/2 right-8 z-10 p-4 backdrop-blur-[6px] rounded-2xl text-white text-lg"
           >
             pH — это показатель кислотно-щелочного равновесия. Вода с pH 7,5
             мягко поддерживает внутренний баланс, не вызывая ни закисления, ни
@@ -121,7 +119,7 @@ export default function CaveWaterBird({
           </motion.p>
           <motion.p
             style={{ opacity: textThreeOpacity, y: textThreeY }}
-            className="max-w-2xl self-start text-left absolute bottom-8 left-8 z-10 p-4 backdrop-blur-[6px] rounded-2xl font-bold"
+            className="max-w-2xl self-start text-left absolute bottom-8 left-8 z-10 p-4 backdrop-blur-[6px] rounded-2xl font-bold text-white text-lg"
           >
             Такой уровень кислотно-щелочного баланса максимально близок к
             внутренней среде человека, особенно к плазме крови и лимфе. Это

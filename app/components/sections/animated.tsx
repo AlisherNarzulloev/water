@@ -276,10 +276,10 @@ export default function AnimatedSections() {
         className="fixed top-24 z-20 flex flex-col justify-between h-full w-full items-center px-8"
       >
         <div className="flex flex-col items-start leading-none">
-          <h1 className="text-white text-[130px] font-extrabold tracking-tight select-none pointer-events-none leading-none -ml-6">
+          <h1 className="text-white text-[130px] font-extrabold tracking-widest select-none pointer-events-none leading-none -ml-5">
             100%
           </h1>
-          <h1 className="text-white text-[218px] font-extrabold tracking-tight select-none pointer-events-none leading-none -mt-6">
+          <h1 className="text-white text-[210px] font-extrabold tracking-widest select-none pointer-events-none leading-none -mt-20">
             КАЗАХСТАНСКАЯ
           </h1>
         </div>
@@ -291,7 +291,7 @@ export default function AnimatedSections() {
       <div className="h-screen">
         <motion.div
           style={{ y: textBuildingY }}
-          className="fixed -bottom-20 z-30 h-full pb-12 w-full items-center px-8"
+          className="fixed -bottom-20 z-30 h-full pb-12 w-full items-center px-8 text-white"
         >
           <div className="self-end max-w-2xl absolute top-1/2 -translate-y-1/2 left-8 p-4 backdrop-blur-[6px] rounded-2xl overflow-hidden">
             <p className="font-bold text-2xl">
