@@ -24,7 +24,7 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
         className="fixed top-0 z-20 flex flex-col justify-between h-full pb-12 w-full items-center px-8"
       >
         <Heading>ЛЕГКАЯ</Heading>
-        <div className="self-end max-w-2/3 xl:max-w-2/5 text-right p-4 backdrop-blur-md rounded-2xl text-white -mt-24 xl:-mt-0">
+        <div className="self-end max-w-2/3 xl:max-w-3/5 text-right p-4 backdrop-blur-md rounded-2xl text-white -mt-24 xl:-mt-0">
           <p className="font-bold text-xl xl:text-3xl 2xl:text-5xl">
             Природная минеральная вода TURAN добывается из источника Бұқпа на
             месторождении Кусколь - одном из 5 редких источников легкой воды на
@@ -36,7 +36,7 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
             лидера списка TURAN доступен всем желающим.
           </p>
         </div>
-        <p className="max-w-3/5 xl:max-w-1/3 text-base xl:text-lx 2xl:text-3xl self-start p-4 backdrop-blur-md rounded-2xl font-bold text-white">
+        <p className="max-w-3/5 xl:max-w-2/3 text-base xl:text-lx 2xl:text-3xl self-start p-4 backdrop-blur-md rounded-2xl font-bold text-white">
           Легкая вода — это научный термин, описывающий воду с низким
           содержанием дейтерия (тяжелого водорода). Она не создаётся
           искусственно, а добывается в местах с особой геологией и экологической
