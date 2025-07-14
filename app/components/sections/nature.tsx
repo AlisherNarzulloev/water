@@ -50,7 +50,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
           style={{ y }}
           className="relative z-20 top-8 1xl:top-20 2xl:top-16 flex justify-center"
         >
-          <h1 className="text-white text-[160px] xl:text-[17vw] mt-10 xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 2xl:gap-32 w-full">
+          <h1 className="text-white text-[160px] xl:text-[17vw] 2xl:text-[15vw] mt-10 xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 2xl:gap-28 w-full">
             <span className="pr-8">ПРИР</span>
             <span className="pl-8">ДНАЯ</span>
           </h1>
@@ -61,7 +61,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
             className="max-w-1/3 px-8 text-white text-xl xl:text-3xl 2xl:text-5xl p-4 backdrop-blur-[6px] rounded-2xl"
           >
             <p>
-              <span className="text-2xl xl:text-5xl 2xl:text-7xl font-semibold">
+              <span className="text-2xl xl:text-4xl 2xl:text-5xl font-semibold">
                 TURAN
               </span>
               — это природная минеральная вода, рожденная из глубин веков.
@@ -79,7 +79,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
           </div>
           <motion.div
             style={{ y }}
-            className="self-end text-sm xl:text-base 2xl:text-2xl max-w-1/3 px-8 text-white leading-relaxed p-4 backdrop-blur-[6px] rounded-2xl mb-8"
+            className="self-end text-sm xl:text-base 2xl:text-xl max-w-1/3 px-8 text-white leading-relaxed p-4 backdrop-blur-[6px] rounded-2xl mb-8"
           >
             <p className="text-right font-bold">
               Она берет свое начало в заповедной зоне Кокшетауской

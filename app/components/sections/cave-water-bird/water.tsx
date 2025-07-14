@@ -16,7 +16,7 @@ export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
     <>
       <motion.div
         style={{ opacity, y }}
-        className="fixed top-8 xl:top-0 1xl:top-10 2xl:-top-10 z-20 flex flex-col justify-between h-full pb-12 w-full items-center px-8"
+        className="fixed top-8 xl:top-0 1xl:top-10 2xl:-top-4 z-20 flex flex-col justify-between h-full pb-12 w-full items-center px-8"
       >
         <Heading>ЖИВАЯ</Heading>
       </motion.div>

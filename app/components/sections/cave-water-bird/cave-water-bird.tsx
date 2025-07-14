@@ -26,13 +26,13 @@ export default function CaveWaterBird({
   const x = useTransform(
     scrollYProgress,
     [0.49, 0.53, 0.6],
-    ["0%", "-50%", "-100%"]
+    ["0%", "-50%", "-50%"]
   );
 
   const y = useTransform(
     scrollYProgress,
     [0.49, 0.52, 0.55],
-    ["0%", "-10%", "-20%"]
+    ["0%", "-10%", "-10%"]
   );
 
   return (

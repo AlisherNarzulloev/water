@@ -16,7 +16,7 @@ export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
     <>
       <motion.div
         style={{ opacity, y }}
-        className="fixed top-0 xl:-top-12 1xl:top-0 2xl:-top-14 flex flex-col justify-between h-full pb-12 w-full items-center px-8"
+        className="fixed top-0 xl:-top-12 1xl:top-0 2xl:-top-14 flex justify-center 2xl:ml-14"
       >
         <Heading>ЛЕГКАЯ</Heading>
       </motion.div>

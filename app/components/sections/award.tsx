@@ -201,7 +201,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
         </motion.div>
         <motion.p
           style={{ y: moveAwardY1, opacity: opacityText1 }}
-          className="text-base xl:text-lg 2xl:text-3xl p-2 backdrop-blur-md rounded-2xl"
+          className="text-base xl:text-lg 2xl:text-2xl p-2 backdrop-blur-md rounded-2xl"
         >
           Вот уже несколько лет подряд TURAN получает высшую награду от Monde
           Selection — одного из самых авторитетных европейских институтов оценки
