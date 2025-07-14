@@ -20,12 +20,20 @@ export default function CaveWaterBird({
   const scale = useTransform(
     scrollYProgress,
     [0.49, 0.6, 0.7, 75],
-    [1, 3, 0, 0]
+    [1, 5, 2, 0]
   );
 
-  const x = useTransform(scrollYProgress, [0.49, 0.6], ["0%", "-100%"]);
+  const x = useTransform(
+    scrollYProgress,
+    [0.49, 0.53, 0.6],
+    ["0%", "-50%", "-100%"]
+  );
 
-  const y = useTransform(scrollYProgress, [0.49, 0.55], ["0%", "-20%"]);
+  const y = useTransform(
+    scrollYProgress,
+    [0.49, 0.52, 0.55],
+    ["0%", "-10%", "-20%"]
+  );
 
   return (
     <motion.section

@@ -46,13 +46,16 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
             unoptimized
           />
         </div>
-        <motion.div style={{ y }} className="relative z-20 flex justify-center">
-          <h1 className="text-white text-[160px] xl:text-[17vw] xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 w-full">
+        <motion.div
+          style={{ y }}
+          className="relative z-20 top-8 1xl:top-20 2xl:top-16 flex justify-center"
+        >
+          <h1 className="text-white text-[160px] xl:text-[17vw] mt-10 xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 2xl:gap-32 w-full">
             <span className="pr-8">ПРИР</span>
             <span className="pl-8">ДНАЯ</span>
           </h1>
         </motion.div>
-        <div className="relative z-50 flex flex-row justify-between items-start h-full w-full mt-6">
+        <div className="relative z-50 flex flex-row justify-between items-start h-full w-full mt-10 1xl:mt-24">
           <motion.div
             style={{ y }}
             className="max-w-1/3 px-8 text-white text-xl xl:text-3xl 2xl:text-5xl p-4 backdrop-blur-[6px] rounded-2xl"
@@ -68,9 +71,9 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
             <Image
               src="/turan-text.png"
               alt="Turan Water"
-              width={210}
-              height={210}
-              className="mb-4"
+              width={100}
+              height={100}
+              className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 object-contain"
               priority
             />
           </div>

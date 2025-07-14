@@ -85,7 +85,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
         style={{ y: moveTextY }}
         className="text-left backdrop-blur-[6px] rounded-2xl fixed bottom-0 top-1/3  h-fit z-20 p-8 left-8 max-w-1/2 text-white"
       >
-        <p className="text-lg xl:text-2xl 2xl:text-3xl font-bold mb-4">
+        <p className="text-lg xl:text-2xl 2xl:text-5xl font-bold mb-4">
           Вода TURAN не просто «соответствует нормам». Она подтверждает свою
           чистоту и стабильность каждый день, каждый месяц, каждый год.
         </p>
@@ -94,7 +94,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
         style={{ y: moveTextY }}
         className="text-right backdrop-blur-[6px] rounded-2xl fixed bottom-4 h-fit z-20 p-8 right-8 max-w-1/2 text-white"
       >
-        <p className="text-base xl:text-lg 2xl:text-xl">
+        <p className="text-base xl:text-lg 2xl:text-4xl ">
           Минерализация 0,2 - 0,47 г/дм³ — это физиологическая норма, при
           которой вода не только утоляет жажду, но и работает на вас: помогает
           клеткам, сосудам, нервной системе, костям, обмену веществ

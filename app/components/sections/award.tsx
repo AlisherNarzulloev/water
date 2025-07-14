@@ -41,7 +41,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
   return (
     <motion.div
       style={{ opacity }}
-      className="relative top-0 h-[200vh] w-full flex items-center justify-center opacity-90"
+      className="relative top-0 h-[200vh] w-full flex items-center justify-center opacity-90 2xl"
     >
       <motion.div className="fixed left-[2.5vw] w-full z-10 top-24">
         <Heading className="!text-[8vw] p-4e !text-black">
@@ -67,7 +67,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
       <motion.div className="text-right fixed top-0 translate-y-1/2 z-20 p-8 right-4 max-w-1/2 flex flex-col justify-between h-1/2">
         <motion.p
           style={{ y: moveTextTitleY }}
-          className="text-lg xl:text-2xl 2xl:text-3xl font-bold mb-4 backdrop-blur-[6px] rounded-2xl "
+          className="text-lg xl:text-2xl 2xl:text-4xl font-bold mb-4 p-2 backdrop-blur-md rounded-2xl "
         >
           Вода TURAN отмечена более чем 20 республиканскими и международными
           наградами за безупречное качество,природный состав и высокие
@@ -75,7 +75,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
         </motion.p>
         <motion.div
           style={{ y: moveAwardY1, opacity: opacityText1 }}
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-4 relative right-80 xl:right-0"
         >
           <div className="flex items-center justify-between gap-4">
             <Image
@@ -201,7 +201,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
         </motion.div>
         <motion.p
           style={{ y: moveAwardY1, opacity: opacityText1 }}
-          className="text-base xl:text-lg 2xl:text-xl"
+          className="text-base xl:text-lg 2xl:text-3xl p-2 backdrop-blur-md rounded-2xl"
         >
           Вот уже несколько лет подряд TURAN получает высшую награду от Monde
           Selection — одного из самых авторитетных европейских институтов оценки

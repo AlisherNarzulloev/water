@@ -69,12 +69,12 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
         style={{ y: moveTextY }}
         className="text-right backdrop-blur-[6px] rounded-2xl fixed bottom-0 top-1/2 -translate-y-1/2 h-fit z-20 p-8 right-4 max-w-1/2 text-white"
       >
-        <p className="text-lg xl:text-2xl 2xl:text-3xl font-bold mb-4">
+        <p className="text-lg xl:text-2xl 2xl:text-4xl font-bold mb-4">
           TURAN — это тонкая, незаметная,но ежедневная поддержка организма Она
           содержит комплекс жизненно важных минералов, без которых наше тело не
           может функционировать полноценно.
         </p>
-        <p className="text-base xl:text-lg 2xl:text-xl">
+        <p className="text-base xl:text-lg 2xl:text-3xl">
           Они не добавлены извне и не подогнаны под норму. Это натуральный
           природный состав: ровно столько, сколько нужно, чтобы поддерживать
           здоровье, не перегружая организм. Именно поэтому воду TURAN можно и
@@ -85,7 +85,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
         style={{ y: moveTextY }}
         className="text-right backdrop-blur-[6px] rounded-2xl fixed bottom-4 h-fit z-20 p-8 right-4 max-w-1/2 text-white"
       >
-        <p className="text-base xl:text-lg 2xl:text-xl">
+        <p className="text-base xl:text-lg 2xl:text-4xl">
           Минерализация 0,2 - 0,47 г/дм³ — это физиологическая норма, при
           которой вода не только утоляет жажду, но и работает на вас: помогает
           клеткам, сосудам, нервной системе, костям, обмену веществ
