@@ -1,6 +1,7 @@
 import { MotionValue, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import Heading from "../ui/heading";
+import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 
 interface UsefulSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -28,8 +29,10 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
     ["0%", "-100%"]
   );
 
+  useAutoScrollDown(scrollYProgress, 0.64, 0.7, 10);
+
   return (
-    <motion.div style={{ opacity: bgOpacity }} className="h-[200vh] relative">
+    <motion.div style={{ opacity: bgOpacity }} className="h-screen relative">
       <motion.div
         style={{ y: bgMoveY, opacity: bgOpacity }}
         className="fixed top-0 left-0 w-full h-screen z-10"

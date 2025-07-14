@@ -35,7 +35,7 @@ export default function CaveWaterBird({
         y,
         opacity,
       }}
-      className="sticky top-[310vh] w-full h-[500vh] z-0 pointer-events-none overflow-hidden"
+      className="relative top-[100vh] w-full h-[500vh] z-0 pointer-events-none overflow-hidden"
     >
       <Image
         width={100}

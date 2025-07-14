@@ -7,12 +7,12 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
-  const scale = useTransform(scrollYProgress, [0, 0.05], [1, 2]);
+  const scale = useTransform(scrollYProgress, [0, 0.05], [1, 2.5]);
   const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   return (
     <motion.section
-      className="fixed top-0 left-0 w-full h-screen z-20 pointer-events-none"
+      className="relative top-0 left-0 w-full h-screen z-20 pointer-events-none"
       style={{ scale, opacity }}
     >
       <div className="relative h-full w-full flex items-center justify-center">

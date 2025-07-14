@@ -1,13 +1,16 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
 import Heading from "../../ui/heading";
+import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 
 interface WaterSectionProps {
   scrollYProgress: MotionValue<number>;
 }
 
 export default function WaterSection({ scrollYProgress }: WaterSectionProps) {
-  const opacity = useTransform(scrollYProgress, [0.35, 0.37, 0.45], [0, 1, 0]);
-  const y = useTransform(scrollYProgress, [0.35, 0.37, 0.45], [100, 0, -100]);
+  const opacity = useTransform(scrollYProgress, [0.35, 0.38, 0.45], [0, 1, 0]);
+  const y = useTransform(scrollYProgress, [0.35, 0.38, 0.45], [100, 0, -100]);
+
+  useAutoScrollDown(scrollYProgress, 0.3, 0.4, 5.5);
 
   return (
     <div className="h-screen">

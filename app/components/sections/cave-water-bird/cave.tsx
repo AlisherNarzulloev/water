@@ -1,5 +1,6 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
 import Heading from "../../ui/heading";
+import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 
 interface CaveSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -8,6 +9,8 @@ interface CaveSectionProps {
 export default function CaveSection({ scrollYProgress }: CaveSectionProps) {
   const opacity = useTransform(scrollYProgress, [0.25, 0.29, 0.35], [0, 1, 0]);
   const y = useTransform(scrollYProgress, [0.27, 0.29, 0.35], [100, 0, -100]);
+
+  useAutoScrollDown(scrollYProgress, 0.16, 0.3, 4);
 
   return (
     <div className="h-screen">

@@ -11,7 +11,7 @@ export default function Curtains({ scrollYProgress }: CurtainsProps) {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1.5, 1]);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-screen z-20 pointer-events-none">
+    <div className="fixed top-0 left-0 w-full h-screen z-20 pointer-events-none s">
       <motion.div
         className="absolute top-0 left-0 h-full w-1/2 origin-right"
         style={{ x: leftX, scale }}

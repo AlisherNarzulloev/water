@@ -1,18 +1,13 @@
 import { MotionValue, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import Heading from "../ui/heading";
+import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 
 interface SecureSectionProps {
   scrollYProgress: MotionValue<number>;
 }
 
 export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
-  //   const cloudMoveY1 = useTransform(
-  //     scrollYProgress,
-  //     [0.67, 0.7],
-  //     ["100%", "00%"]
-  //   );
-
   const bgMoveY = useTransform(scrollYProgress, [0.74, 0.75], ["100%", "0%"]);
 
   const bgOpacity = useTransform(
@@ -34,10 +29,12 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
     ["-100%", "0%", "0%", "-100%"]
   );
 
+  useAutoScrollDown(scrollYProgress, 0.72, 0.8, 11);
+
   return (
     <motion.div
       style={{ opacity: bgOpacity }}
-      className="h-[200vh] fixed top-0 left-0"
+      className="h-[200vh] relative top-0 left-0"
     >
       <motion.div
         style={{ y: bgMoveY, opacity: bgOpacity }}

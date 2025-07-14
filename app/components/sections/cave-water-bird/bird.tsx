@@ -1,3 +1,4 @@
+import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 import { motion, MotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 
@@ -12,6 +13,8 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
     [0, 1, 1, 0]
   );
   const y = useTransform(scrollYProgress, [0.45, 0.5], [100, 0]);
+
+  useAutoScrollDown(scrollYProgress, 0.4, 0.48, 6.7);
 
   return (
     <div className="h-[200vh]">

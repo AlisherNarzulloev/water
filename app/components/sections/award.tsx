@@ -2,24 +2,20 @@ import { motion, MotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 import Heading from "../ui/heading";
 import MenuButton from "../ui/menu-button";
+import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 
 interface AwardSectionProps {
   scrollYProgress: MotionValue<number>;
 }
 
 export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
-  //   const scale = useTransform(scrollYProgress, [0, 0.05], [1, 2]);
   const opacity = useTransform(scrollYProgress, [0.84, 0.86], [0, 1]);
   const moveTextTitleY = useTransform(
     scrollYProgress,
     [0.84, 0.85],
     ["100%", "0%"]
   );
-  //   const moveTextY = useTransform(
-  //     scrollYProgress,
-  //     [0.84, 0.85, 0.86, 0.88],
-  //     ["100%", "0%", "0%", "-100%"]
-  //   );
+
   const moveAwardY1 = useTransform(
     scrollYProgress,
     [0.85, 0.87, 0.88, 0.9],
@@ -40,30 +36,34 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
 
   const opacityButtons = useTransform(scrollYProgress, [0.87, 0.89], [0, 1]);
 
+  useAutoScrollDown(scrollYProgress, 0.8, 0.9, 12.2);
+
   return (
     <motion.div
       style={{ opacity }}
-      className="fixed top-0 h-full w-full flex items-center justify-center opacity-90"
+      className="relative top-0 h-[200vh] w-full flex items-center justify-center opacity-90"
     >
       <motion.div className="fixed left-[2.5vw] w-full z-10 top-24">
         <Heading className="!text-[8vw] p-4e !text-black">
           СЕРТИФИЦИРОВАННАЯ
         </Heading>
       </motion.div>
-      <Image
-        src="/bg-hero.webp"
-        alt="background"
-        fill
-        priority
-        className="object-cover object-center"
-      />
-      <Image
-        src="/birds.png"
-        alt="background"
-        fill
-        priority
-        className="object-cover fixed !top-3 2xl:!top-2 z-30"
-      />
+      <div className="fixed w-full h-screen top-0">
+        <Image
+          src="/bg-hero.webp"
+          alt="background"
+          fill
+          priority
+          className="object-cover object-center h-full w-full"
+        />
+        <Image
+          src="/birds.png"
+          alt="background"
+          fill
+          priority
+          className="object-cover !top-3 2xl:!top-2 z-30"
+        />
+      </div>
       <motion.div className="text-right fixed top-0 translate-y-1/2 z-20 p-8 right-4 max-w-1/2 flex flex-col justify-between h-1/2">
         <motion.p
           style={{ y: moveTextTitleY }}

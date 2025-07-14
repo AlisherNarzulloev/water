@@ -1,3 +1,4 @@
+import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 import { motion, MotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 
@@ -13,10 +14,7 @@ interface NatureSectionProps {
   curtainProgress: MotionValue<number>;
 }
 
-export default function NatureSection({
-  scrollYProgress,
-}: // curtainProgress,
-NatureSectionProps) {
+export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
   const opacity = useTransform(
     scrollYProgress,
     [0.05, 0.1, 0.15, 0.2],
@@ -29,13 +27,15 @@ NatureSectionProps) {
     ["100%", "0%", "0%", "-100%"]
   );
 
+  useAutoScrollDown(scrollYProgress, 0.02, 0.17, 2);
+
   return (
     <motion.section
-      className="fixed top-0 left-0 w-full h-screen z-40 pointer-events-none"
+      className="relative w-full h-screen z-40 pointer-events-none snap-end"
       style={{ opacity, scale }}
     >
-      <div className="relative w-full h-full flex flex-col justify-between overflow-hidden px-8">
-        <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
+      <div className="fixed top-0 w-full h-full flex flex-col justify-between overflow-hidden px-8">
+        <div className="fixed top-0 inset-0 z-0 w-full h-full pointer-events-none">
           <Image
             src="/bg-nature.webp"
             alt="Лесной фон"

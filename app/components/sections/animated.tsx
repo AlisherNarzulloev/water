@@ -6,7 +6,6 @@ import Curtains from "./curtains";
 import NatureSection from "./nature";
 import Header from "../layout/header";
 import CaveWaterBird from "./cave-water-bird/cave-water-bird";
-// import CloudsSection from "./clouds";
 import KazakhSection from "./kazakh";
 import UsefulSection from "./useful";
 import SecureSection from "./secure";
@@ -28,7 +27,7 @@ export default function AnimatedSections() {
   return (
     <div
       ref={ref}
-      className="relative w-full h-[1400vh] bg-white overflow-hidden"
+      className="relative w-full h-[1400vh] bg-white overflow-hidden snap-y snap-mandatory"
     >
       <Header scrollYProgress={scrollYProgress} />
       <HeroSection scrollYProgress={scrollYProgress} />
@@ -38,7 +37,6 @@ export default function AnimatedSections() {
         curtainProgress={curtainProgress}
       />
       <CaveWaterBird scrollYProgress={scrollYProgress} />
-      {/* <CloudsSection scrollYProgress={scrollYProgress} /> */}
       <KazakhSection scrollYProgress={scrollYProgress} />
       <UsefulSection scrollYProgress={scrollYProgress} />
       <SecureSection scrollYProgress={scrollYProgress} />
