@@ -1,7 +1,8 @@
+import { MotionValue } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export function useAutoScrollDown(
-  scrollYProgress: any,
+  scrollYProgress: MotionValue<number>,
   sectionStart = 0.62,
   sectionEnd = 0.66,
   sectionIndex = 1
