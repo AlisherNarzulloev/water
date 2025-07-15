@@ -50,14 +50,14 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
       </motion.div>
       <div className="fixed w-full h-screen top-0">
         <Image
-          src="/bg-hero.webp"
+          src="/hero/bg-hero.webp"
           alt="background"
           fill
           priority
           className="object-cover object-center h-full w-full"
         />
         <Image
-          src="/birds.png"
+          src="/hero/birds.png"
           alt="background"
           fill
           priority

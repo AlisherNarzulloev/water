@@ -57,7 +57,7 @@ export default function CloudsSection({ scrollYProgress }: CloudsSectionProps) {
         }}
       >
         <Image
-          src={"/cloud1.webp"}
+          src={"/clouds/cloud1.webp"}
           width={100}
           height={100}
           alt="cloud1"
@@ -75,7 +75,7 @@ export default function CloudsSection({ scrollYProgress }: CloudsSectionProps) {
         className="w-full fixed top-0 z-20"
       >
         <Image
-          src={"/cloud2.webp"}
+          src={"/clouds/cloud2.webp"}
           width={100}
           height={100}
           alt="cloud2"
@@ -93,7 +93,7 @@ export default function CloudsSection({ scrollYProgress }: CloudsSectionProps) {
         className="w-full fixed top-0 z-20"
       >
         <Image
-          src={"/cloud3.webp"}
+          src={"/clouds/cloud3.webp"}
           width={100}
           height={100}
           alt="cloud3"

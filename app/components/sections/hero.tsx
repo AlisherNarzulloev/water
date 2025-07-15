@@ -17,7 +17,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
     >
       <div className="relative h-full w-full flex items-center justify-center">
         <Image
-          src="/bg-hero.webp"
+          src="/hero/bg-hero.webp"
           alt="background"
           fill
           priority

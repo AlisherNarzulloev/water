@@ -38,10 +38,10 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
         className="fixed top-0 left-0 w-full h-screen z-10"
       >
         <Image
-          src={"/bg-cloud.webp"}
+          src={"/useful/bg-cloud.webp"}
           width={100}
           height={100}
-          alt="cloud4"
+          alt="bg-useful"
           className="w-full h-screen object-cover object-center"
           unoptimized
         />
@@ -51,7 +51,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
         className="fixed top-0 -left-[27%] w-full h-screen z-20"
       >
         <Image
-          src={"/poleznaya_girl.webp"}
+          src={"/useful/poleznaya_girl.webp"}
           width={100}
           height={100}
           alt="cloud4"

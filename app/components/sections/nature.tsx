@@ -37,7 +37,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
       <div className="fixed top-0 w-full h-full flex flex-col justify-between overflow-hidden px-8">
         <div className="fixed top-0 inset-0 z-0 w-full h-full pointer-events-none">
           <Image
-            src="/bg-nature.webp"
+            src="/nature/bg-nature.webp"
             alt="Лесной фон"
             fill
             className="object-contain xl:object-fit select-none pointer-events-none"
@@ -69,7 +69,7 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
           </motion.div>
           <div className="absolute top-1/3 left-1/2 -translate-1/2">
             <Image
-              src="/turan-text.png"
+              src="/nature/turan-text.png"
               alt="Turan Water"
               width={100}
               height={100}

@@ -41,10 +41,10 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
         className="fixed  top-0 left-0 w-full h-screen z-10"
       >
         <Image
-          src={"/bez_back.webp"}
+          src={"/secure/bez_back.webp"}
           width={100}
           height={100}
-          alt="cloud4"
+          alt="bg"
           className="w-full h-screen object-cover object-center"
           unoptimized
         />
@@ -54,10 +54,10 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
         className="fixed top-0 left-0 w-full h-screen z-10"
       >
         <Image
-          src={"/bez_guy.webp"}
+          src={"/secure/bez_guy.webp"}
           width={100}
           height={100}
-          alt="cloud4"
+          alt="guy"
           className="w-full h-screen object-cover object-center"
           unoptimized
         />
@@ -67,10 +67,10 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
         className="fixed top-0 left-0 w-full h-screen z-20 scale-125"
       >
         <Image
-          src={"/bez_table.webp"}
+          src={"/secure/bez_table.webp"}
           width={100}
           height={100}
-          alt="cloud4"
+          alt="table"
           className="w-full h-screen object-cover object-center"
           unoptimized
         />

@@ -49,7 +49,7 @@ export default function CaveWaterBird({
         width={100}
         height={100}
         className="select-none pointer-events-none h-full w-full"
-        src={"/bg-without-bird.webp"}
+        src={"/cave-water-bird/bg-without-bird.webp"}
         alt="bg-cave-water-bird"
         unoptimized
       />
