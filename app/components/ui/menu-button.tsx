@@ -4,7 +4,7 @@ export default function MenuButton({
   children: React.ReactNode;
 }) {
   return (
-    <button className="flex items-center justify-end w-fit pl-8 pr-2 py-2 rounded-full border-2 border-white bg-[#77777733] text-white text-2xl font-bold tracking-wider backdrop-blur-[4px]  !cursor-pointer">
+    <button className="flex items-center justify-end w-fit !pl-8 !pr-2 !py-2 !pt-2 !rounded-full border-2 border-white blur-gray text-white text-2xl font-bold tracking-wider !cursor-pointer">
       <span>{children}</span>
       <span className="ml-4 w-14 h-14 flex items-center justify-center rounded-full bg-white p-2">
         <svg

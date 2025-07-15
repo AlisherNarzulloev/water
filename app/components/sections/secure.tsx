@@ -34,7 +34,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
   return (
     <motion.div
       style={{ opacity: bgOpacity }}
-      className="h-[200vh] relative top-0 left-0"
+      className="h-[200vh] relative top-0 left-0 p-8"
     >
       <motion.div
         style={{ y: bgMoveY, opacity: bgOpacity }}
@@ -83,21 +83,29 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
       </motion.div>
       <motion.div
         style={{ y: moveTextY }}
-        className="text-left backdrop-blur-[6px] rounded-2xl fixed bottom-0 top-1/3  h-fit z-20 p-8 left-8 max-w-1/2 text-white"
+        className="text-left  fixed bottom-0 top-1/3 z-20 left-8 max-w-1/2 text-white"
       >
-        <p className="text-lg xl:text-2xl 2xl:text-5xl font-bold mb-4">
+        <p className="title-clamp font-bold mb-4 blur-gray">
           Вода TURAN не просто «соответствует нормам». Она подтверждает свою
           чистоту и стабильность каждый день, каждый месяц, каждый год.
         </p>
       </motion.div>
       <motion.div
         style={{ y: moveTextY }}
-        className="text-right backdrop-blur-[6px] rounded-2xl fixed bottom-4 h-fit z-20 p-8 right-8 max-w-1/2 text-white"
+        className="text-center blur-gray fixed bottom-8 h-fit z-20 w-[97%] left-1/2 -translate-x-1/2 text-white"
       >
-        <p className="text-base xl:text-lg 2xl:text-4xl ">
-          Минерализация 0,2 - 0,47 г/дм³ — это физиологическая норма, при
-          которой вода не только утоляет жажду, но и работает на вас: помогает
-          клеткам, сосудам, нервной системе, костям, обмену веществ
+        <p className="title-clamp font-bold">
+          Ежемесячный государственный контроль
+        </p>
+        <p className="text-clamp font-bold">
+          Месторождение воды TURAN официально зарегистрировано и находится под
+          надзором Комитета контроля качества МЗ РК. .Специалисты ежемесячно
+          выезжают на месторождение, где производят отбор проб прямо из
+          эксплуатационной скважины — до какой-либо обработки или фильтрации.
+          Пробы доставляются в аккредитованные лаборатории для проведения
+          полного анализа: от химического состава до микробиологической чистоты.
+          Это позволяет объективно оценивать стабильность природного источника и
+          гарантировать безопасность воды на самом базовом уровне
         </p>
       </motion.div>
     </motion.div>

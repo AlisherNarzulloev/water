@@ -19,7 +19,7 @@ export default function CaveWaterBird({
 
   const scale = useTransform(
     scrollYProgress,
-    [0.49, 0.6, 0.7, 75],
+    [0.49, 0.53, 0.7, 75],
     [1, 5, 2, 0]
   );
 
@@ -43,12 +43,12 @@ export default function CaveWaterBird({
         y,
         opacity,
       }}
-      className="relative top-[100vh] w-full h-[500vh] z-0 pointer-events-none overflow-hidden"
+      className="relative w-full h-[500vh] z-0 pointer-events-none overflow-hidden top-[90vh]"
     >
       <Image
         width={100}
         height={100}
-        className="select-none pointer-events-none h-full w-full"
+        className="select-none pointer-events-none h-full w-full object-cover"
         src={"/cave-water-bird/bg-without-bird.webp"}
         alt="bg-cave-water-bird"
         unoptimized

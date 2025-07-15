@@ -67,25 +67,24 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
       </motion.div>
       <motion.div
         style={{ y: moveTextY }}
-        className="text-right backdrop-blur-[6px] rounded-2xl fixed bottom-0 top-1/2 -translate-y-1/2 h-fit z-20 p-8 right-4 max-w-1/2 text-white"
+        className="text-right blur-gray fixed bottom-0 top-1/2 -translate-y-1/2 h-fit z-20 right-8 max-w-1/2 text-white"
       >
-        <p className="text-lg xl:text-2xl 2xl:text-4xl font-bold mb-4">
-          TURAN — это тонкая, незаметная,но ежедневная поддержка организма Она
-          содержит комплекс жизненно важных минералов, без которых наше тело не
-          может функционировать полноценно.
+        <p className="title-clamp font-bold mb-4">
+          TURAN — это тонкая, незаметная,но ежедневная поддержка организма
         </p>
-        <p className="text-base xl:text-lg 2xl:text-3xl">
-          Они не добавлены извне и не подогнаны под норму. Это натуральный
-          природный состав: ровно столько, сколько нужно, чтобы поддерживать
-          здоровье, не перегружая организм. Именно поэтому воду TURAN можно и
-          нужно пить каждый день
+        <p className="text-clamp">
+          Она содержит комплекс жизненно важных минералов, без которых наше тело
+          не может функционировать полноценно. Они не добавлены извне и не
+          подогнаны под норму. Это натуральный природный состав: ровно столько,
+          сколько нужно, чтобы поддерживать здоровье, не перегружая организм.
+          Именно поэтому воду TURAN можно и нужно пить каждый день
         </p>
       </motion.div>
       <motion.div
         style={{ y: moveTextY }}
-        className="text-right backdrop-blur-[6px] rounded-2xl fixed bottom-4 h-fit z-20 p-8 right-4 max-w-1/2 text-white"
+        className="text-right blur-gray fixed bottom-4 h-fit z-20 right-8 max-w-1/2 text-white"
       >
-        <p className="text-base xl:text-lg 2xl:text-4xl">
+        <p className="text-clamp">
           Минерализация 0,2 - 0,47 г/дм³ — это физиологическая норма, при
           которой вода не только утоляет жажду, но и работает на вас: помогает
           клеткам, сосудам, нервной системе, костям, обмену веществ

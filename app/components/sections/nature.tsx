@@ -48,51 +48,42 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
         </div>
         <motion.div
           style={{ y }}
-          className="relative z-20 top-8 1xl:top-20 2xl:top-16 flex justify-center"
+          className="relative top-16 1xl:top-0 2xl:-top-4 z-20 flex justify-center"
         >
-          <h1 className="text-white text-[160px] xl:text-[17vw] 2xl:text-[15vw] mt-10 xl:-mt-24 font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 2xl:gap-28 w-full">
+          <h1 className="text-white text-[160px] xl:text-[17vw] 2xl:text-[15vw] font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 2xl:gap-28 w-full">
             <span className="pr-8">ПРИР</span>
             <span className="pl-8">ДНАЯ</span>
           </h1>
         </motion.div>
-        <div className="relative z-50 flex flex-row justify-between items-start h-full w-full mt-10 1xl:mt-24">
-          <motion.div
-            style={{ y }}
-            className="max-w-1/3 px-8 text-white text-xl xl:text-3xl 2xl:text-5xl p-4 backdrop-blur-[6px] rounded-2xl"
-          >
-            <p>
-              <span className="text-2xl xl:text-4xl 2xl:text-5xl font-semibold">
-                TURAN
-              </span>
-              — это природная минеральная вода, рожденная из глубин веков.
-            </p>
-          </motion.div>
-          <div className="absolute top-1/3 left-1/2 -translate-1/2">
-            <Image
-              src="/nature/turan-text.png"
-              alt="Turan Water"
-              width={100}
-              height={100}
-              className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 object-contain"
-              priority
-            />
-          </div>
-          <motion.div
-            style={{ y }}
-            className="self-end text-sm xl:text-base 2xl:text-xl max-w-1/3 px-8 text-white leading-relaxed p-4 backdrop-blur-[6px] rounded-2xl mb-8"
-          >
-            <p className="text-right font-bold">
-              Она берет свое начало в заповедной зоне Кокшетауской
-              возвышенности, где на глубине более 100 метров скрыт реликтовый
-              источник, сформированный более 15 000 лет назад талыми водами
-              Валдайского ледника. Проходя через древние породы, возраст которых
-              исчисляется сотнями миллионов лет, вода насыщается природными
-              минералами и сохраняет свою первозданную чистоту. Без
-              искусственных добавок, без внешнего воздействия — только идеальный
-              баланс, созданный самой природой.
-            </p>
-          </motion.div>
+        <motion.p
+          style={{ y }}
+          className="title-clamp max-w-1/3 text-white blur-gray font-bold fixed top-1/2 -translate-y-1/2"
+        >
+          TURAN — это природная минеральная вода, рожденная из глубин веков.
+        </motion.p>
+        <div className="fixed top-1/2 left-1/2 -translate-1/2">
+          <Image
+            src="/nature/turan-text.png"
+            alt="Turan Water"
+            width={100}
+            height={100}
+            className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-contain"
+            priority
+          />
         </div>
+        <motion.p
+          style={{ y }}
+          className="text-right font-bold text-clamp self-end max-w-1/3 text-white blur-gray fixed top-1/2 -translate-y-1/3"
+        >
+          Она берет свое начало в заповедной зоне Кокшетауской возвышенности,
+          где на глубине более 100 метров скрыт реликтовый источник,
+          сформированный более 15 000 лет назад талыми водами Валдайского
+          ледника. Проходя через древние породы, возраст которых исчисляется
+          сотнями миллионов лет, вода насыщается природными минералами и
+          сохраняет свою первозданную чистоту. Без искусственных добавок, без
+          внешнего воздействия — только идеальный баланс, созданный самой
+          природой.
+        </motion.p>
         <motion.div
           style={{ y }}
           className="relative w-full grid grid-cols-4 z-30 gap-8 pb-4 xl:pb-10"
@@ -100,14 +91,10 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
           {features.map((f) => (
             <div
               key={f.value}
-              className="px-8 py-4 flex flex-col items-center text-white p-4 backdrop-blur-[6px] rounded-2xl text-center"
+              className="px-8 py-4 flex flex-col items-center text-white blur-gray text-center"
             >
-              <span className="text-3xl xl:text-6xl 2xl:text-7xl font-bold">
-                {f.value}
-              </span>
-              <span className="text-base xl:text-lg 2xl:text-2xl opacity-80">
-                {f.label}
-              </span>
+              <span className="title-clamp font-bold">{f.value}</span>
+              <span className="text-clamp opacity-80">{f.label}</span>
             </div>
           ))}
         </motion.div>
