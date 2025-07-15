@@ -1,5 +1,4 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
-import Image from "next/image";
 import CaveSection from "./cave";
 import WaterSection from "./water";
 import BirdSection from "./bird";
@@ -13,7 +12,7 @@ export default function CaveWaterBird({
 }: CaveWaterBirdSectionProps) {
   const opacity = useTransform(
     scrollYProgress,
-    [0.22, 0.28, 0.5, 0.55],
+    [0.26, 0.28, 0.5, 0.55],
     [0, 1, 1, 0]
   );
 
@@ -43,16 +42,9 @@ export default function CaveWaterBird({
         y,
         opacity,
       }}
-      className="relative w-full h-[500vh] z-0 pointer-events-none overflow-hidden top-[90vh]"
+      className="relative w-full h-full z-0 pointer-events-none overflow-hidden top-[150vh] 1xl:top-[100vh]"
     >
-      <Image
-        width={100}
-        height={100}
-        className="select-none pointer-events-none h-full w-full object-cover"
-        src={"/cave-water-bird/bg-without-bird.webp"}
-        alt="bg-cave-water-bird"
-        unoptimized
-      />
+      <div className="h-full bg-cave-water-bird bg-contain bg-repeat-y" />
       <CaveSection scrollYProgress={scrollYProgress} />
       <WaterSection scrollYProgress={scrollYProgress} />
       <BirdSection scrollYProgress={scrollYProgress} />

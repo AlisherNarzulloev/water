@@ -45,7 +45,21 @@
     );
   }
 
+  .bg-nature {
+    background-image: url("../public/nature/bg-nature.webp");
+  }
+
   .bg-cave-water-bird {
     background-image: url("../public/cave-water-bird/bg-without-bird.webp");
+  }
+
+  .bg-cave {
+    background-image: url("../public/cave-water-bird/cave.webp");
+  }
+  .bg-water {
+    background-image: url("../public/cave-water-bird/water.webp");
+  }
+  .bg-bird {
+    background-image: url("../public/cave-water-bird/bg-bird.webp");
   }
 }

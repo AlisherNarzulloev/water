@@ -31,63 +31,45 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
 
   return (
     <motion.section
-      className="relative w-full h-screen z-40 pointer-events-none snap-end"
+      className="relative w-full h-screen z-40 pointer-events-none snap-end px-20"
       style={{ opacity, scale }}
     >
-      <div className="fixed top-0 w-full h-full flex flex-col justify-between overflow-hidden px-8">
-        <div className="fixed top-0 inset-0 z-0 w-full h-full pointer-events-none">
-          <Image
-            src="/nature/bg-nature.webp"
-            alt="Лесной фон"
-            fill
-            className="object-contain xl:object-fit select-none pointer-events-none"
-            draggable={false}
-            priority
-            unoptimized
-          />
+      <div className="h-full w-full bg-contain bg-top 1xl:bg-center bg-nature fixed z-0 left-0 top-0" />
+      <div className="fixed top-1/2 left-1/2 -translate-1/2">
+        <Image
+          src="/nature/turan-text.png"
+          alt="Turan Water"
+          width={100}
+          height={100}
+          className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-contain"
+          priority
+        />
+      </div>
+      <motion.div
+        style={{ y, opacity }}
+        className="h-full w-full flex flex-col justify-between fixed top-0 left-0 px-20 2xl:px-40 gap-8"
+      >
+        <h1 className="text-white text-[160px] xl:text-[17vw] 2xl:text-[15vw] font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-between w-full">
+          <span className="pr-8">ПРИР</span>
+          <span className="pl-8">ДНАЯ</span>
+        </h1>
+        <div className="grow flex justify-between">
+          <p className="title-clamp max-w-1/3 h-fit text-white blur-gray font-bold">
+            TURAN — это природная минеральная вода, рожденная из глубин веков.
+          </p>
+
+          <p className="text-right font-bold text-clamp self-end max-w-1/3 text-white blur-gray">
+            Она берет свое начало в заповедной зоне Кокшетауской возвышенности,
+            где на глубине более 100 метров скрыт реликтовый источник,
+            сформированный более 15 000 лет назад талыми водами Валдайского
+            ледника. Проходя через древние породы, возраст которых исчисляется
+            сотнями миллионов лет, вода насыщается природными минералами и
+            сохраняет свою первозданную чистоту. Без искусственных добавок, без
+            внешнего воздействия — только идеальный баланс, созданный самой
+            природой.
+          </p>
         </div>
-        <motion.div
-          style={{ y }}
-          className="relative top-16 1xl:top-0 2xl:-top-4 z-20 flex justify-center"
-        >
-          <h1 className="text-white text-[160px] xl:text-[17vw] 2xl:text-[15vw] font-extrabold tracking-wider select-none pointer-events-none leading-none flex justify-center gap-6 xl:gap-20 2xl:gap-28 w-full">
-            <span className="pr-8">ПРИР</span>
-            <span className="pl-8">ДНАЯ</span>
-          </h1>
-        </motion.div>
-        <motion.p
-          style={{ y }}
-          className="title-clamp max-w-1/3 text-white blur-gray font-bold fixed top-1/2 -translate-y-1/2"
-        >
-          TURAN — это природная минеральная вода, рожденная из глубин веков.
-        </motion.p>
-        <div className="fixed top-1/2 left-1/2 -translate-1/2">
-          <Image
-            src="/nature/turan-text.png"
-            alt="Turan Water"
-            width={100}
-            height={100}
-            className="mb-4 h-44 w-44 xl:w-72 xl:h-72 1xl:h-44 1xl:w-44 2xl:h-64 2xl:w-64 object-contain"
-            priority
-          />
-        </div>
-        <motion.p
-          style={{ y }}
-          className="text-right font-bold text-clamp self-end max-w-1/3 text-white blur-gray fixed top-1/2 -translate-y-1/3"
-        >
-          Она берет свое начало в заповедной зоне Кокшетауской возвышенности,
-          где на глубине более 100 метров скрыт реликтовый источник,
-          сформированный более 15 000 лет назад талыми водами Валдайского
-          ледника. Проходя через древние породы, возраст которых исчисляется
-          сотнями миллионов лет, вода насыщается природными минералами и
-          сохраняет свою первозданную чистоту. Без искусственных добавок, без
-          внешнего воздействия — только идеальный баланс, созданный самой
-          природой.
-        </motion.p>
-        <motion.div
-          style={{ y }}
-          className="relative w-full grid grid-cols-4 z-30 gap-8 pb-4 xl:pb-10"
-        >
+        <div className="relative w-full grid grid-cols-4 z-30 gap-8 pb-4 xl:pb-10">
           {features.map((f) => (
             <div
               key={f.value}
@@ -97,8 +79,8 @@ export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
               <span className="text-clamp opacity-80">{f.label}</span>
             </div>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </motion.section>
   );
 }
