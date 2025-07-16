@@ -8,21 +8,6 @@ interface KazakhSectionProps {
   scrollYProgress: MotionValue<number>;
 }
 
-const features = [
-  {
-    value: "",
-    label: "",
-  },
-  {
-    value: "",
-    label: "",
-  },
-  {
-    value: "",
-    label: "",
-  },
-];
-
 export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
   const textBuildingY = useTransform(
     scrollYProgress,
@@ -31,8 +16,6 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
   );
 
   const opacity = useTransform(scrollYProgress, [0.42, 0.44], [0, 1]);
-
-  const y = useTransform(scrollYProgress, [0.4, 0.44], ["100%", "0%"]);
 
   useAutoScrollDown(scrollYProgress, 0.4, 0.45, 7.4);
   useAutoScrollDown(scrollYProgress, 0.47, 0.5, 8.4);
