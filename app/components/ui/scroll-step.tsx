@@ -30,7 +30,7 @@ export function ScrollStep({
       <div
         className={`absolute w-2/3 pointer-events-auto ${
           leftAlign === "center"
-            ? "left-0 top-32 xl:top-1/3 1xl:top-1/2 1xl:-translate-y-2/3 2xl:-translate-y-1/2"
+            ? "left-0 top-36 xl:top-1/3 1xl:top-1/2 1xl:-translate-y-2/3 2xl:-translate-y-1/2"
             : "left-0 bottom-0"
         } ${width === "full" ? "w-full" : "w-2/3 "}`}
       >
