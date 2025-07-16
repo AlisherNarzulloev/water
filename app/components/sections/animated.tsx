@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 import HeroSection from "./hero";
 import NatureSection from "./nature";
 import Header from "../layout/header";
