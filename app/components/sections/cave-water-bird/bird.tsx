@@ -16,7 +16,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
   );
   const imageOpacity = useTransform(
     scrollYProgress,
-    [0.28, 0.3, 0.45, 0.47],
+    [0.28, 0.3, 0.36, 0.4],
     [0, 1, 1, 0]
   );
 
@@ -71,7 +71,7 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
 
   return (
     <section className="relative w-full h-screen">
-      <div className="fixed z-20 inset-0 p-20 2xl:px-40 h-full w-full">
+      <div className="fixed z-20 inset-0 p-20 h-full w-full">
         <motion.h1
           style={{ opacity: titleOpacity }}
           className="fixed left-1/2 top-10 -translate-x-1/2 w-full px-20"
@@ -95,10 +95,10 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
                   height="83.391"
                   x=".663"
                   y=".648"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     result="hardAlpha"

@@ -2,6 +2,7 @@ import { motion, MotionValue, useTransform } from "framer-motion";
 import CaveSection from "./cave";
 import WaterSection from "./water";
 import BirdSection from "./bird";
+import Image from "next/image";
 
 interface CaveWaterBirdSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -12,34 +13,50 @@ export default function CaveWaterBird({
 }: CaveWaterBirdSectionProps) {
   const opacity = useTransform(
     scrollYProgress,
-    [0.07, 0.12, 0.5, 0.55],
-    [0, 1, 1, 0]
+    [0.07, 0.12, 0.35, 0.36, 0.37],
+    [0, 1, 1, 1, 0]
   );
 
-  // const scale = useTransform(
-  //   scrollYProgress,
-  //   [0.51, 0.53, 0.7, 0.75],
-  //   [1, 5, 2, 0]
-  // );
+  const moveXCloud1 = useTransform(
+    scrollYProgress,
+    [0.35, 0.366, 0.45, 0.47],
+    ["-200%", "0%", "0%", "-200%"]
+  );
 
-  // const x = useTransform(
-  //   scrollYProgress,
-  //   [0.51, 0.53, 0.6],
-  //   ["0%", "-50%", "-50%"]
-  // );
-
-  // const y = useTransform(
-  //   scrollYProgress,
-  //   [0.51, 0.52, 0.55],
-  //   ["0%", "-10%", "-10%"]
-  // );
+  const moveXCloud2 = useTransform(
+    scrollYProgress,
+    [0.35, 0.366, 0.45, 0.47],
+    ["200%", "0%", "0%", "200%"]
+  );
 
   return (
     <motion.section
       style={{ opacity }}
-      className="w-screen h-[400vh] z-10 overflow-hidden"
+      className="w-screen max-h-[300vh] h-full z-10 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-cave-water-bird h-full w-full bg-fit 2xl:bg-contain bg-top bg-no-repeat z-0 2xl:top-[110vh]" />
+      <div className="fixed top-0 z-20">
+        <motion.div style={{ x: moveXCloud1 }} className="fixed top-0 z-20">
+          <Image
+            src={"/clouds/cloud1.webp"}
+            width={100}
+            height={100}
+            alt="cloud1"
+            className="w-screen h-screen scale-200"
+          />
+        </motion.div>
+
+        <motion.div style={{ x: moveXCloud2 }} className="fixed top-0 z-20">
+          <Image
+            src={"/clouds/cloud2.webp"}
+            width={100}
+            height={100}
+            alt="cloud1"
+            className="w-screen h-screen scale-200"
+          />
+        </motion.div>
+      </div>
+
+      <div className="absolute inset-0 bg-cave-water-bird max-h-[750vh] h-full w-full bg-fit 2xl:bg-contain bg-top z-0 2xl:top-[110vh]" />
 
       <div className="relative z-10 h-full">
         <CaveSection scrollYProgress={scrollYProgress} />
