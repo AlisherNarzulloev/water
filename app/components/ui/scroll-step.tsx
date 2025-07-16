@@ -9,6 +9,8 @@ interface ScrollStepProps {
   leftAlign?: "center" | "bottom";
   rightAlign?: "center" | "bottom";
   width?: "full" | "fit";
+  leftClassName?: string;
+  rightClassName?: string;
 }
 
 export function ScrollStep({
@@ -19,6 +21,8 @@ export function ScrollStep({
   leftAlign = "center",
   rightAlign = "center",
   width = "fit",
+  leftClassName = "",
+  rightClassName = "",
 }: ScrollStepProps) {
   const opacity = useTransform(progress, range, [0, 1, 0]);
 
@@ -28,11 +32,11 @@ export function ScrollStep({
       className="absolute inset-0 h-full w-full pointer-events-none z-10"
     >
       <div
-        className={`absolute w-2/3 pointer-events-auto ${
+        className={`absolute pointer-events-auto ${
           leftAlign === "center"
-            ? "left-0 top-36 xl:top-1/3 1xl:top-1/2 1xl:-translate-y-2/3 2xl:-translate-y-1/2"
+            ? "left-0 top-1/2 -translate-y-1/2"
             : "left-0 bottom-0"
-        } ${width === "full" ? "w-full" : "w-2/3 "}`}
+        } ${width === "full" ? "w-full" : "w-2/3"} ${leftClassName}`}
       >
         {left}
       </div>
@@ -42,7 +46,7 @@ export function ScrollStep({
           rightAlign === "center"
             ? "right-0 top-1/2 -translate-y-1/2"
             : "right-0 bottom-0"
-        } ${width === "full" ? "w-full" : "w-2/3 "}`}
+        } ${width === "full" ? "w-full" : "w-2/3"} ${rightClassName}`}
       >
         {right}
       </div>

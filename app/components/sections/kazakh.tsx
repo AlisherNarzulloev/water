@@ -15,9 +15,13 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
     ["200%", "-10%", "-10%", "-200%"]
   );
 
-  const opacity = useTransform(scrollYProgress, [0.42, 0.44], [0, 1]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.42, 0.44, 0.52, 0.55],
+    [0, 1, 1, 0]
+  );
 
-  useAutoScrollDown(scrollYProgress, 0.4, 0.45, 7.4);
+  useAutoScrollDown(scrollYProgress, 0.37, 0.45, 7.4);
   useAutoScrollDown(scrollYProgress, 0.47, 0.5, 8.4);
   const moveXCloud1 = useTransform(
     scrollYProgress,
@@ -34,7 +38,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
   const blocks = createScrollBlocks(0.432, 0.03, [
     {
       left: (
-        <div className="text-white blur-gray p-4 leading-tight">
+        <div className="text-white blur-gray p-4 leading-tight -mt-44 1xl:-mt-0">
           <p className="text-xl xl:text-2xl 1xl:text-4xl font-bold mb-2">
             Весь путь от скважины до бутылки устроен так, чтобы сохранить
             природную формулу воды. TURAN проходит только две стадии обработки —
@@ -102,7 +106,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
       <motion.div style={{ opacity }} className="fixed top-0 w-full">
         <motion.div
           style={{ y: textBuildingY }}
-          className="w-full px-20 fixed z-10 left-1/2 top-20 2xl:top-32 -translate-x-1/2"
+          className="w-full px-20 fixed z-10 left-1/2 top-20 2xl:top-24 -translate-x-1/2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
