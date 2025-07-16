@@ -5,7 +5,6 @@ import {
   useMotionValueEvent,
   useTransform,
 } from "framer-motion";
-import Heading from "../../ui/heading";
 import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 import { useState } from "react";
 
