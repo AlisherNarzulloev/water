@@ -12,13 +12,9 @@ const features = [
 
 interface NatureSectionProps {
   scrollYProgress: MotionValue<number>;
-  curtainProgress: MotionValue<number>;
 }
 
-export default function NatureSection({
-  scrollYProgress,
-  curtainProgress,
-}: NatureSectionProps) {
+export default function NatureSection({ scrollYProgress }: NatureSectionProps) {
   const opacity = useTransform(
     scrollYProgress,
     [0.02, 0.05, 0.06, 0.07],

@@ -21,12 +21,6 @@ export default function AnimatedSections() {
 
   const scrollLength = sectionCount * 400;
 
-  const curtainProgress = useTransform(
-    scrollYProgress,
-    [0.01, 0.1, 0.2, 0.25],
-    [0, 1, 1, 0]
-  );
-
   return (
     <div
       ref={ref}
@@ -35,10 +29,7 @@ export default function AnimatedSections() {
     >
       <Header scrollYProgress={scrollYProgress} />
       <HeroSection scrollYProgress={scrollYProgress} />
-      <NatureSection
-        curtainProgress={curtainProgress}
-        scrollYProgress={scrollYProgress}
-      />
+      <NatureSection scrollYProgress={scrollYProgress} />
       <CaveWaterBird scrollYProgress={scrollYProgress} />
       <KazakhSection scrollYProgress={scrollYProgress} />
       <UsefulSection scrollYProgress={scrollYProgress} />
