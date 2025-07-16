@@ -1,9 +1,6 @@
 import { MotionValue, useTransform, motion } from "framer-motion";
 import Image from "next/image";
-import { createScrollBlocks } from "@/app/utils/createScrollBlock";
 import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
-import { ScrollStep } from "../ui/scroll-step";
-import { div } from "framer-motion/client";
 
 interface UsefulSectionProps {
   scrollYProgress: MotionValue<number>;
