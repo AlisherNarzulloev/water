@@ -1,17 +1,37 @@
-import { motion, MotionValue, useTransform } from "framer-motion";
+import { motion, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 
 interface CurtainsProps {
-  scrollYProgress: MotionValue<number>;
+  progress: MotionValue<number>;
 }
 
-export default function Curtains({ scrollYProgress }: CurtainsProps) {
-  const leftX = useTransform(scrollYProgress, [0, 0.2], ["-100%", "0%"]);
-  const rightX = useTransform(scrollYProgress, [0, 0.2], ["100%", "0%"]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1.5, 1]);
+export default function Curtains({ progress }: CurtainsProps) {
+  const leftX = useTransform(
+    progress,
+    [0.01, 0.03, 0.05, 0.07, 0.11],
+    ["-100%", "0%", "0%", "0%", "-100%"]
+  );
+  const rightX = useTransform(
+    progress,
+    [0.01, 0.03, 0.05, 0.07, 0.11],
+    ["100%", "0%", "0%", "0%", "100%"]
+  );
+  const scale = useTransform(
+    progress,
+    [0.01, 0.03, 0.05, 0.07, 0.11],
+    [1.5, 1, 1, 1, 1.5]
+  );
+  const opacity = useTransform(
+    progress,
+    [0.01, 0.03, 0.05, 0.07, 0.11],
+    [0, 1, 0, 1, 0]
+  );
 
   return (
-    <div className="fixed top-0 left-0 w-full h-screen z-20 pointer-events-none s">
+    <motion.div
+      className="fixed top-0 left-0 w-full h-screen z-30 pointer-events-none"
+      style={{ opacity }}
+    >
       <motion.div
         className="absolute top-0 left-0 h-full w-1/2 origin-right"
         style={{ x: leftX, scale }}
@@ -38,6 +58,6 @@ export default function Curtains({ scrollYProgress }: CurtainsProps) {
           priority
         />
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

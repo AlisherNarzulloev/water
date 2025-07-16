@@ -7,15 +7,15 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
-  const scale = useTransform(scrollYProgress, [0, 0.05], [1, 2.5]);
-  const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.02], [1, 2.5]);
+  const opacity = useTransform(scrollYProgress, [0, 0.02], [1, 0]);
 
   return (
     <motion.section
-      className="relative top-0 left-0 w-full h-screen z-20 pointer-events-none"
+      className="relative w-full h-screen z-0 pointer-events-none"
       style={{ scale, opacity }}
     >
-      <div className="relative h-full w-full flex items-center justify-center">
+      <div className="relative h-full w-full">
         <Image
           src="/hero/bg-hero.webp"
           alt="background"
@@ -23,16 +23,19 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
           priority
           className="object-cover"
         />
-        <div className="absolute right-[8vw] top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-2">
-          <div className="text-[#05A8E2] text-lg tracking-widest mb-1 uppercase">
-            ЕДИНСТВЕННАЯ В КАЗАХСТАНЕ
+
+        <div className="absolute inset-0 flex flex-col justify-center items-end text-center pr-[8vw] z-40 gap-2">
+          <div className="flex flex-col justify-center items-center gap-4">
+            <div className="text-[#05A8E2] text-lg tracking-widest uppercase">
+              ЕДИНСТВЕННАЯ В КАЗАХСТАНЕ
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-medium text-[#153A51] leading-none">
+              ПРИРОДНАЯ ЛЕГКАЯ
+              <br />
+              ЖИВАЯ ВОДА
+            </h1>
+            <LogoText />
           </div>
-          <h1 className="text-4xl lg:text-5xl font-medium text-[#153A51] leading-none mb-2 text-center">
-            ПРИРОДНАЯ ЛЕГКАЯ
-            <br />
-            ЖИВАЯ ВОДА
-          </h1>
-          <LogoText />
         </div>
       </div>
     </motion.section>

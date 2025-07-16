@@ -14,7 +14,7 @@ interface HeaderProps {
 }
 
 export default function Header({ scrollYProgress }: HeaderProps) {
-  const y = useTransform(scrollYProgress, [0, 0.01, 0.03], [0, 0, -100]);
+  const y = useTransform(scrollYProgress, [0, 0.03], [0, -100]);
 
   return (
     <motion.header

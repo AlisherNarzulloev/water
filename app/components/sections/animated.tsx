@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import HeroSection from "./hero";
-import Curtains from "./curtains";
 import NatureSection from "./nature";
 import Header from "../layout/header";
 import CaveWaterBird from "./cave-water-bird/cave-water-bird";
@@ -18,6 +17,10 @@ export default function AnimatedSections() {
     offset: ["start start", "end start"],
   });
 
+  const sectionCount = 4;
+
+  const scrollLength = sectionCount * 400;
+
   const curtainProgress = useTransform(
     scrollYProgress,
     [0.01, 0.1, 0.2, 0.25],
@@ -27,14 +30,14 @@ export default function AnimatedSections() {
   return (
     <div
       ref={ref}
-      className="relative w-full h-[1400vh] bg-white overflow-hidden snap-y snap-mandatory"
+      style={{ height: `${scrollLength}vh` }}
+      className="relative w-full overflow-hidden snap-y snap-mandatory"
     >
       <Header scrollYProgress={scrollYProgress} />
       <HeroSection scrollYProgress={scrollYProgress} />
-      <Curtains scrollYProgress={curtainProgress} />
       <NatureSection
-        scrollYProgress={scrollYProgress}
         curtainProgress={curtainProgress}
+        scrollYProgress={scrollYProgress}
       />
       <CaveWaterBird scrollYProgress={scrollYProgress} />
       <KazakhSection scrollYProgress={scrollYProgress} />

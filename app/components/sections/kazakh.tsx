@@ -54,7 +54,7 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
     ["100%", "100%", "0%"]
   );
 
-  useAutoScrollDown(scrollYProgress, 0.49, 0.6, 8.9);
+  useAutoScrollDown(scrollYProgress, 0.5, 0.6, 8.9);
 
   return (
     <div className="h-screen relative top-0 z-20">
