@@ -11,13 +11,13 @@ interface KazakhSectionProps {
 export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
   const textBuildingY = useTransform(
     scrollYProgress,
-    [0.42, 0.45, 0.65, 0.67],
+    [0.4, 0.42, 0.65, 0.67],
     ["200%", "-10%", "-10%", "-200%"]
   );
 
   const opacity = useTransform(
     scrollYProgress,
-    [0.42, 0.44, 0.52, 0.55],
+    [0.4, 0.42, 0.52, 0.55],
     [0, 1, 1, 0]
   );
 
@@ -25,13 +25,13 @@ export default function KazakhSection({ scrollYProgress }: KazakhSectionProps) {
   useAutoScrollDown(scrollYProgress, 0.47, 0.5, 8.4);
   const moveXCloud1 = useTransform(
     scrollYProgress,
-    [0.41, 0.42, 0.44],
+    [0.38, 0.4, 0.44],
     ["-200%", "0%", "-200%"]
   );
 
   const moveXCloud2 = useTransform(
     scrollYProgress,
-    [0.41, 0.42, 0.44],
+    [0.38, 0.4, 0.44],
     ["200%", "0%", "200%"]
   );
 

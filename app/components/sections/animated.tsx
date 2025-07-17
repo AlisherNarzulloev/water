@@ -35,7 +35,6 @@ export default function AnimatedSections() {
       <UsefulSection scrollYProgress={scrollYProgress} />
       <SecureSection scrollYProgress={scrollYProgress} />
       <AwardSection scrollYProgress={scrollYProgress} />
-      <div className="h-[100vh]" />
     </div>
   );
 }

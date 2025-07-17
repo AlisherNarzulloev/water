@@ -31,7 +31,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
   const yText1 = useTransform(
     scrollYProgress,
     [0.55, 0.57, 0.58, 0.6],
-    ["100%", "0%", "0%", "-100%"]
+    ["10%", "0%", "0%", "-10%"]
   );
 
   const opacityText2 = useTransform(
@@ -42,7 +42,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
   const yText2 = useTransform(
     scrollYProgress,
     [0.59, 0.61, 0.62, 0.64],
-    ["100%", "0%", "0%", "-100%"]
+    ["10%", "0%", "0%", "-10%"]
   );
 
   const opacityText3 = useTransform(
@@ -53,7 +53,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
   const yText3 = useTransform(
     scrollYProgress,
     [0.63, 0.65, 0.67, 0.69],
-    ["100%", "0%", "0%", "-100%"]
+    ["10%", "0%", "0%", "-10%"]
   );
 
   const opacityTitle2 = useTransform(
@@ -64,7 +64,7 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
   const yTitle2 = useTransform(
     scrollYProgress,
     [0.59, 0.61, 0.67, 0.69],
-    ["100%", "0%", "0%", "-100%"]
+    ["10%", "0%", "0%", "-10%"]
   );
 
   useAutoScrollDown(scrollYProgress, 0.54, 0.57, 9.2);

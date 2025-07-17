@@ -13,19 +13,19 @@ export default function CaveWaterBird({
 }: CaveWaterBirdSectionProps) {
   const opacity = useTransform(
     scrollYProgress,
-    [0.07, 0.12, 0.35, 0.36, 0.37],
-    [0, 1, 1, 1, 0]
+    [0.07, 0.12, 0.359, 0.36],
+    [0, 1, 1, 0]
   );
 
   const moveXCloud1 = useTransform(
     scrollYProgress,
-    [0.35, 0.366, 0.45, 0.47],
+    [0.35, 0.366, 0.38, 0.4],
     ["-200%", "0%", "0%", "-200%"]
   );
 
   const moveXCloud2 = useTransform(
     scrollYProgress,
-    [0.35, 0.366, 0.45, 0.47],
+    [0.35, 0.366, 0.38, 0.4],
     ["200%", "0%", "0%", "200%"]
   );
 
@@ -56,7 +56,7 @@ export default function CaveWaterBird({
         </motion.div>
       </div>
 
-      <div className="absolute inset-0 bg-cave-water-bird max-h-[750vh] h-full w-full bg-fit 2xl:bg-contain bg-top z-0 2xl:top-[110vh]" />
+      <div className="absolute inset-0 bg-cave-water-bird max-h-[750vh] 1xl:max-h-[670vh] 2xl:max-h-[600vh] h-full w-full bg-fit 2xl:bg-contain bg-top z-0 2xl:top-[110vh] bg-no-repeat" />
 
       <div className="relative z-10 h-full">
         <CaveSection scrollYProgress={scrollYProgress} />

@@ -11,13 +11,19 @@ interface BirdSectionProps {
 export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
   const titleOpacity = useTransform(
     scrollYProgress,
-    [0.28, 0.3, 0.45, 0.47],
+    [0.28, 0.3, 0.35, 0.4],
     [0, 1, 1, 0]
   );
   const imageOpacity = useTransform(
     scrollYProgress,
-    [0.28, 0.3, 0.36, 0.4],
+    [0.28, 0.3, 0.36, 0.39],
     [0, 1, 1, 0]
+  );
+
+  const moveBirdY = useTransform(
+    scrollYProgress,
+    [0.28, 0.4, 0.42, 0.45],
+    ["50%", "-10%", "0%", "100%"]
   );
 
   useAutoScrollDown(scrollYProgress, 0.28, 0.31, 4.9);
@@ -124,8 +130,8 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
         </motion.h1>
 
         <motion.div
-          style={{ opacity: imageOpacity }}
-          className="absolute inset-0 -z-10 left-1/2 -translate-x-1/2"
+          style={{ opacity: imageOpacity, y: moveBirdY }}
+          className="fixed inset-0 bottom-0"
         >
           <Image
             fill
