@@ -56,6 +56,17 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
     ["100%", "0%", "0%", "-100%"]
   );
 
+  const opacityTitle2 = useTransform(
+    scrollYProgress,
+    [0.59, 0.61, 0.67, 0.69],
+    [0, 1, 1, 0]
+  );
+  const yTitle2 = useTransform(
+    scrollYProgress,
+    [0.59, 0.61, 0.67, 0.69],
+    ["100%", "0%", "0%", "-100%"]
+  );
+
   useAutoScrollDown(scrollYProgress, 0.54, 0.57, 9.2);
   useAutoScrollDown(scrollYProgress, 0.58, 0.61, 9.9);
   useAutoScrollDown(scrollYProgress, 0.62, 0.65, 10.7);
@@ -78,7 +89,12 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
             />
           </svg>
         </motion.div>
-
+        <motion.p
+          style={{ opacity: opacityTitle2, y: yTitle2 }}
+          className="title-clamp blur-gray fixed top-1/3 -translate-y-1/3 text-white mx-20 right-0"
+        >
+          Что делает воду TURAN полезной?
+        </motion.p>
         <div className="fixed z-20 inset-0 p-20 h-full w-full">
           <motion.div
             style={{ opacity: opacityText1, y: yText1 }}
@@ -108,15 +124,13 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
             </div>
           </motion.div>
         </div>
+
         <div className="fixed z-20 inset-0 p-20 h-full w-full">
           <motion.div
             style={{ opacity: opacityText2, y: yText2 }}
             className="text-white flex flex-col items-end text-right h-full leading-tight justify-end w-full"
           >
-            <div className="flex flex-col items-end max-w-full 2xl:max-w-2/3 justify-between h-2/3 gap-4">
-              <div className=" blur-gray">
-                <p className="title-clamp">Что делает воду TURAN полезной?</p>
-              </div>
+            <div className="flex flex-col items-end max-w-full 2xl:max-w-2/3 justify-end h-2/3 gap-4">
               <div className="blur-gray text-right flex flex-col gap-4 max-w-2/3">
                 <div>
                   <p className="title-clamp">Кальций</p>
@@ -154,20 +168,8 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
             style={{ opacity: opacityText3, y: yText3 }}
             className="text-white flex flex-col items-end text-right h-full leading-tight justify-end w-full"
           >
-            <div className="flex flex-col items-end max-w-full 2xl:max-w-2/3 justify-between h-2/3 gap-4">
-              <div className=" blur-gray">
-                <p className="title-clamp">Что делает воду TURAN полезной?</p>
-              </div>
+            <div className="flex flex-col items-end max-w-full 2xl:max-w-2/3 justify-end h-2/3 gap-4">
               <div className="blur-gray text-right flex flex-col gap-4 max-w-2/3">
-                <div>
-                  <p className="title-clamp">Гидрокарбонаты</p>
-                  <p className="text-clamp">
-                    Отвечают за кислотно-щелочное равновесие организма. Они
-                    улучшают пищеварение, снижают избыточную кислотность
-                    желудочного сока и способствуют мягкому выводу продуктов
-                    обмена веществ
-                  </p>
-                </div>
                 <div>
                   <p className="title-clamp">Калий и натрий</p>
                   <p className="text-clamp">
@@ -185,6 +187,14 @@ export default function UsefulSection({ scrollYProgress }: UsefulSectionProps) {
                     фосфора. Обладает антибактериальными свойствами,
                     поддерживает здоровье полости рта и способствует выведению
                     тяжёлых металлов из организма.
+                  </p>
+                </div>
+                <div>
+                  <p className="title-clamp">Йод</p>
+                  <p className="text-clamp">
+                    Важнейший микроэлемент для щитовидной железы. Участвует в
+                    выработке гормонов, влияющих на метаболизм, уровень энергии,
+                    концентрацию и развитие мозга.
                   </p>
                 </div>
               </div>
