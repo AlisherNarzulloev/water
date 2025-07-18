@@ -8,23 +8,23 @@ interface CurtainsProps {
 export default function Curtains({ progress }: CurtainsProps) {
   const leftX = useTransform(
     progress,
-    [0.01, 0.03, 0.05, 0.07, 0.11],
+    [0.01, 0.03, 0.05, 0.14, 0.16],
     ["-100%", "0%", "0%", "0%", "-100%"]
   );
   const rightX = useTransform(
     progress,
-    [0.01, 0.03, 0.05, 0.07, 0.11],
+    [0.01, 0.03, 0.05, 0.14, 0.16],
     ["100%", "0%", "0%", "0%", "100%"]
   );
   const scale = useTransform(
     progress,
-    [0.01, 0.03, 0.05, 0.07, 0.11],
+    [0.01, 0.03, 0.05, 0.14, 0.16],
     [1.5, 1, 1, 1, 1.5]
   );
   const opacity = useTransform(
     progress,
-    [0.01, 0.03, 0.05, 0.07, 0.11],
-    [0, 1, 0, 1, 0]
+    [0.01, 0.03, 0.05, 0.14, 0.14, 0.16],
+    [0, 1, 0, 0, 1, 0]
   );
 
   return (

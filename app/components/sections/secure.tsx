@@ -1,15 +1,30 @@
-import { MotionValue, useTransform, motion } from "framer-motion";
+import {
+  MotionValue,
+  useTransform,
+  motion,
+  useMotionValueEvent,
+} from "framer-motion";
 import Image from "next/image";
 import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
-import { createScrollBlocks } from "@/app/utils/createScrollBlock";
-import { ScrollStep } from "../ui/scroll-step";
+import { useState } from "react";
+import SecureText from "../ui/text-logo/secure-text";
 
 interface SecureSectionProps {
   scrollYProgress: MotionValue<number>;
 }
 
 export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
-  const bgOpacity = useTransform(
+  const [showText1, setShowText1] = useState(false);
+  const [showText2, setShowText2] = useState(false);
+
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    setShowText1(v > 0.69 && v < 0.75);
+  });
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    setShowText2(v > 0.75 && v < 0.81);
+  });
+
+  const opacity = useTransform(
     scrollYProgress,
     [0.69, 0.71, 0.81, 0.83],
     [0, 1, 1, 0]
@@ -21,107 +36,49 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
     ["-100%", "0%", "0%", "-100%"]
   );
 
-  const blocks = createScrollBlocks(0.69, 0.03, [
-    {
-      left: (
-        <div className="text-white blur-gray p-4 leading-tight -mt-52 1xl:-mt-32">
-          <p className="text-xl xl:text-2xl 1xl:text-4xl font-bold mb-2">
-            Вода TURAN не просто «соответствует нормам». Она подтверждает свою
-            чистоту и стабильность каждый день, каждый месяц, каждый год.
-          </p>
-        </div>
-      ),
-      right: (
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-2 2xl:gap-8 text-white leading-tight">
-          <div className="blur-gray text-center">
-            <p className="title-clamp font-bold mb-2">
-              Автоматизированный контроль
-            </p>
-            <p className="text-clamp">
-              Все этапы производства — от водозабора до упаковки — находятся под
-              непрерывным контролем операторов. Современные цифровые системы
-              отслеживают параметры в реальном времени, исключая человеческий
-              фактор в критичных зонах
-            </p>
-          </div>
-          <div className="blur-gray  text-center">
-            <p className="title-clamp font-bold mb-2">
-              Ежегодная верификация независимыми НИИ
-            </p>
-            <p className="text-clamp">
-              Ежегодная верификация независимыми НИИ Один раз в год TURAN
-              проходит расширенный химический анализ в независимых
-              научно-исследовательских институтах — как казахстанских, так и
-              зарубежных. Это обеспечивает международную валидность данных и
-              полное соответствие мировым стандартам
-            </p>
-          </div>
-          <div className="blur-gray text-center">
-            <p className="title-clamp font-bold mb-2">
-              Ежедневная проверка качества
-            </p>
-            <p className="text-clamp text-center">
-              Ежедневная проверка качества На заводе KMW работает собственная
-              лаборатория, где вода ежедневно проходит полный анализ по
-              санитарно-гигиеническим, органолептическим и физико-химическим
-              показателям. Это не формальность, а часть ежедневного
-              производственного процесса
-            </p>
-          </div>
-        </div>
-      ),
-    },
-    {
-      left: (
-        <div className="text-white blur-gray p-4 leading-tight">
-          <p className="text-xl xl:text-2xl 1xl:text-4xl font-bold mb-2">
-            Вода TURAN не просто «соответствует нормам». Она подтверждает свою
-            чистоту и стабильность каждый день, каждый месяц, каждый год.
-          </p>
-        </div>
-      ),
-      right: (
-        <div className="blur-gray leading-tight text-white text-center">
-          <p className="title-clamp font-bold mb-2">
-            Ежемесячный государственный контроль
-          </p>
-          <p className="text-white text-center text-clamp">
-            Месторождение воды TURAN официально зарегистрировано и находится под
-            надзором Комитета контроля качества МЗ РК. .Специалисты ежемесячно
-            выезжают на месторождение, где производят отбор проб прямо из
-            эксплуатационной скважины — до какой-либо обработки или фильтрации.
-            Пробы доставляются в аккредитованные лаборатории для проведения
-            полного анализа: от химического состава до микробиологической
-            чистоты. Это позволяет объективно оценивать стабильность природного
-            источника и гарантировать безопасность воды на самом базовом уровне
-          </p>
-        </div>
-      ),
-      reverse: true,
-    },
-  ]);
+  const moveTextY1 = useTransform(
+    scrollYProgress,
+    [0.69, 0.71, 0.73, 0.75],
+    ["10%", "0%", "0%", "-10%"]
+  );
+
+  const opacityText1 = useTransform(
+    scrollYProgress,
+    [0.69, 0.71, 0.73, 0.75],
+    [0, 1, 1, 0]
+  );
+
+  const moveTextY2 = useTransform(
+    scrollYProgress,
+    [0.75, 0.77, 0.79, 0.81],
+    ["10%", "0%", "0%", "-10%"]
+  );
+
+  const opacityText2 = useTransform(
+    scrollYProgress,
+    [0.75, 0.77, 0.79, 0.81],
+    [0, 1, 1, 0]
+  );
 
   useAutoScrollDown(scrollYProgress, 0.67, 0.72, 11.5);
   useAutoScrollDown(scrollYProgress, 0.73, 0.75, 12.4);
 
   return (
     <section className="relative h-screen w-full">
-      <div className="fixed z-20 inset-0 p-20 h-full w-full">
+      <motion.section
+        style={{ opacity }}
+        className="relative top-0 w-full h-full z-0 pointer-events-none snap-end"
+      >
+        <Image
+          src={"/secure/bez_back.webp"}
+          width={100}
+          height={100}
+          alt="bg"
+          className="w-full h-screen object-cover object-center fixed top-0 z-0"
+          unoptimized
+        />
         <motion.div
-          style={{ opacity: bgOpacity }}
-          className="fixed  top-0 left-0 w-full h-screen z-10"
-        >
-          <Image
-            src={"/secure/bez_back.webp"}
-            width={100}
-            height={100}
-            alt="bg"
-            className="w-full h-screen object-cover object-center"
-            unoptimized
-          />
-        </motion.div>
-        <motion.div
-          style={{ opacity: bgOpacity, x: moveGuyX }}
+          style={{ opacity, x: moveGuyX }}
           className="fixed top-0 left-0 w-full h-screen z-10"
         >
           <Image
@@ -134,7 +91,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
           />
         </motion.div>
         <motion.div
-          style={{ opacity: bgOpacity }}
+          style={{ opacity }}
           className="fixed top-0 left-0 w-full h-screen z-20 scale-125"
         >
           <Image
@@ -146,44 +103,84 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
             unoptimized
           />
         </motion.div>
-        <motion.div
-          style={{ opacity: bgOpacity }}
-          className="w-full px-20 fixed z-10 left-1/2 -translate-x-1/2 top-10"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 1282 129"
-          >
-            <path
-              fill="#fff"
-              d="M25.28 102.619h48.382c6.481 0 11.265-1.312 14.352-3.935 3.395-3.087 5.093-7.176 5.093-12.27 0-5.092-1.698-9.105-5.093-12.037-2.778-2.315-7.253-3.472-13.426-3.472H25.28v31.714ZM.973 3.309h104.634v23.38H25.28v21.298h35.187c8.179 0 14.43.154 18.75.463 4.476.309 9.414 1.39 14.816 3.241 5.401 1.698 9.954 4.321 13.658 7.87 6.945 6.791 10.417 15.82 10.417 27.085 0 11.575-3.858 21.066-11.575 28.474C98.971 122.373 88.477 126 75.05 126H.974V3.31ZM139.217 126V3.31h98.616v23.38h-74.309v22.455h45.141v23.38h-45.141v30.094h78.939V126H139.217Zm110.625-18.056 14.121-20.603c6.636 5.864 14.275 10.34 22.917 13.426 8.797 3.241 17.98 4.862 27.548 4.862 9.105 0 16.204-1.389 21.297-4.167 6.173-3.241 9.26-8.102 9.26-14.584 0-4.321-2.238-7.794-6.713-10.417-4.63-2.47-13.581-3.704-26.854-3.704H296.14V48.913h18.751c9.414 0 15.587-.694 18.519-2.083 4.476-1.852 6.714-4.785 6.714-8.797 0-1.543-.309-2.932-.926-4.167-.463-1.234-1.467-2.315-3.01-3.24-1.389-1.081-2.238-1.621-2.546-1.621-.155-.155-1.003-.617-2.547-1.39-5.093-2.005-11.497-3.009-19.214-3.009-8.796 0-16.898 1.312-24.306 3.936-6.791 2.469-13.272 6.019-19.446 10.648l-14.352-19.213c7.871-5.71 16.667-10.34 26.39-13.89 10.186-3.55 21.452-5.324 33.798-5.324 15.278 0 27.625 2.932 37.039 8.796 10.34 7.254 15.51 16.59 15.51 28.011 0 11.112-4.322 18.365-12.964 21.76 4.784 2.315 8.642 5.479 11.575 9.491 3.395 4.476 5.092 10.109 5.092 16.9 0 13.426-4.475 23.766-13.426 31.019-9.877 8.18-24.075 12.269-42.595 12.269-14.043 0-26.93-2.083-38.659-6.25-9.414-3.549-17.979-8.488-25.695-14.815Zm201.727-83.57c-10.957 0-20.14 3.782-27.548 11.344-7.253 7.562-10.88 17.285-10.88 29.168s3.627 21.606 10.88 29.168c7.408 7.562 16.591 11.343 27.548 11.343 11.112 0 20.294-3.781 27.547-11.343 7.408-7.562 11.112-17.285 11.112-29.168s-3.704-21.606-11.112-29.168c-7.253-7.562-16.435-11.343-27.547-11.343Zm45.372 86.579c-12.037 12.038-27.161 18.056-45.372 18.056s-33.335-6.018-45.373-18.056c-12.037-12.192-18.056-27.548-18.056-46.067 0-18.52 6.019-33.798 18.056-45.835C418.234 6.859 433.358.763 451.569.763s33.335 6.096 45.372 18.288c12.192 12.037 18.288 27.316 18.288 45.835 0 18.52-6.096 33.875-18.288 46.067ZM614.163 126V26.69h-56.021V126h-24.538V3.31H638.47V126h-24.307Zm98.8-86.578-16.204 32.872h32.64l-16.436-32.872ZM756.021 126l-15.047-30.326h-55.79L670.6 126h-26.853L703.935 3.31h18.288L782.874 126h-26.853Zm123.582-45.604 19.446 14.584c-5.247 10.186-12.578 18.442-21.992 24.77-9.414 6.173-20.68 9.259-33.798 9.259-19.6 0-35.11-5.941-46.53-17.825-11.729-11.728-17.593-26.93-17.593-45.603 0-19.292 5.941-34.956 17.825-46.993C808.844 6.704 824.354.763 843.491.763c13.117 0 24.152 2.778 33.103 8.333 8.334 4.785 15.433 11.498 21.297 20.14L877.288 43.82c-4.012-6.481-8.642-11.343-13.889-14.584-5.71-3.24-12.424-4.861-20.14-4.861-11.42 0-20.68 3.55-27.779 10.649-7.716 7.716-11.575 17.825-11.575 30.325 0 12.192 3.936 22.223 11.807 30.094 6.636 6.636 15.509 9.954 26.621 9.954 8.642 0 16.359-2.469 23.149-7.408 6.482-4.784 11.189-10.648 14.121-17.593ZM995.433 126V70.905h-55.79V126h-24.538V3.31h24.538v44.446h55.79V3.309h24.537V126h-24.537Zm99.027-86.578-16.2 32.872h32.64l-16.44-32.872ZM1137.52 126l-15.05-30.326h-55.78L1052.1 126h-26.85l60.19-122.69h18.28L1164.37 126h-26.85Zm87.89-49.076L1194.85 126h-28.7l32.41-51.16c-8.49-1.852-15.36-5.401-20.61-10.648-5.86-5.865-8.79-13.89-8.79-24.076 0-10.803 3.16-19.368 9.49-25.695 7.41-7.408 18.9-11.112 34.49-11.112h68.06V126h-24.31V76.924h-31.48Zm31.48-50.697h-46.06c-5.41 0-9.42 1.003-12.04 3.01-3.24 2.006-4.86 5.478-4.86 10.416 0 4.63 1.46 8.18 4.39 10.649 2.94 2.47 7.57 3.704 13.89 3.704h44.68v-27.78Z"
-            />
-          </svg>
-        </motion.div>
-        <div className="relative h-full w-full z-20">
-          <ScrollStep
-            key={0}
-            progress={scrollYProgress}
-            range={blocks[0].range}
-            left={blocks[0].left}
-            right={blocks[0].right}
-            leftAlign="center"
-            rightAlign="bottom"
-            width="full"
-          />
-          <ScrollStep
-            key={1}
-            progress={scrollYProgress}
-            range={blocks[1].range}
-            left={blocks[1].left}
-            right={blocks[1].right}
-            leftAlign="center"
-            rightAlign="bottom"
-            width="full"
-          />
-        </div>{" "}
-      </div>
+        <div className="h-full w-full flex flex-col justify-between fixed top-0 left-0 gap-4 px-20 py-10 z-20">
+          <div className="w-full">
+            <SecureText />
+          </div>
+          {showText1 || showText2 ? (
+            <motion.div
+              style={{ opacity }}
+              className="text-white leading-tight"
+            >
+              <p className="title-clamp font-bold mb-2 1xl:max-w-2/3 blur-gray px-6 py-5">
+                Вода TURAN не просто «соответствует нормам». Она подтверждает
+                свою чистоту и стабильность каждый день, каждый месяц, каждый
+                год.
+              </p>
+            </motion.div>
+          ) : null}
+          {showText1 && (
+            <motion.div
+              style={{ opacity: opacityText1, y: moveTextY1 }}
+              className="w-full h-full flex flex-col justify-end"
+            >
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 2xl:gap-8 text-white leading-tight">
+                <div className="blur-gray text-center px-6 py-5">
+                  <p className="title-clamp font-bold mb-2">
+                    Автоматизированный контроль
+                  </p>
+                  <p className="text-clamp">
+                    Все этапы производства — от водозабора до упаковки —
+                    находятся под непрерывным контролем операторов. Современные
+                    цифровые системы отслеживают параметры в реальном времени,
+                    исключая человеческий фактор в критичных зонах
+                  </p>
+                </div>
+                <div className="blur-gray text-center px-6 py-5">
+                  <p className="title-clamp font-bold mb-2">
+                    Ежегодная верификация независимыми НИИ
+                  </p>
+                  <p className="text-clamp">
+                    Ежегодная верификация независимыми НИИ Один раз в год TURAN
+                    проходит расширенный химический анализ в независимых
+                    научно-исследовательских институтах — как казахстанских, так
+                    и зарубежных. Это обеспечивает международную валидность
+                    данных и полное соответствие мировым стандартам
+                  </p>
+                </div>
+                <div className="blur-gray text-center px-6 py-5">
+                  <p className="title-clamp font-bold mb-2">
+                    Ежедневная проверка качества
+                  </p>
+                  <p className="text-clamp text-center">
+                    Ежедневная проверка качества На заводе KMW работает
+                    собственная лаборатория, где вода ежедневно проходит полный
+                    анализ по санитарно-гигиеническим, органолептическим и
+                    физико-химическим показателям. Это не формальность, а часть
+                    ежедневного производственного процесса
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+          {showText2 && (
+            <motion.div
+              style={{ opacity: opacityText2, y: moveTextY2 }}
+              className="w-full h-full flex flex-col justify-end items-center gap-8"
+            >
+              <p className="text-white text-center text-clamp blur-gray px-6 py-5 leading-tight w-5/6">
+                Мы не зависим от импорта, не ждём поставок из-за границы и не
+                ищем подрядчиков за рубежом. Это не жест маркетинга, а
+                стратегия: полный контроль над каждым звеном позволяет сохранять
+                стабильность, гарантировать качество и действительно отвечать за
+                продукт перед потребителем. Мы гордимся тем, что TURAN — не
+                импортированный бренд и не франшиза. Это полностью казахстанская
+                история: честная, прозрачная и сильная.
+              </p>
+            </motion.div>
+          )}
+        </div>
+      </motion.section>
     </section>
   );
 }

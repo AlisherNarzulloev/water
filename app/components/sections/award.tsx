@@ -1,7 +1,14 @@
-import { motion, MotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useMotionValueEvent,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import MenuButton from "../ui/menu-button";
 import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
+import { useState } from "react";
+import FamilyText from "../ui/text-logo/family-text";
 
 interface AwardSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -9,55 +16,57 @@ interface AwardSectionProps {
 
 const golds = [
   {
-    url: "/awards/gold1.png",
-    className: "h-32 w-20",
-  },
-  {
-    url: "/awards/gold2.png",
-    className: "h-32 w-20",
-  },
-  {
-    url: "/awards/gold3.png",
-    className: "h-32 w-20",
-  },
-  {
     url: "/awards/gold4.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
   {
     url: "/awards/gold5.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
   {
     url: "/awards/gold6.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
   {
     url: "/awards/gold7.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
 ];
 
 const silvers = [
   {
     url: "/awards/silver5.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
   {
     url: "/awards/silver6.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
   {
     url: "/awards/silver1.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
   {
     url: "/awards/silver2.png",
-    className: "h-28 w-28",
+    className: "h-20 w-20",
   },
 ];
 
 export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
+  const [showText1, setShowText1] = useState(false);
+  const [showText2, setShowText2] = useState(false);
+  const [showText3, setShowText3] = useState(false);
+
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    setShowText1(v > 0.83 && v < 0.86);
+  });
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    setShowText2(v > 0.86 && v < 0.89);
+  });
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    setShowText3(v > 0.89 && v < 1);
+  });
+
   const opacity = useTransform(
     scrollYProgress,
     [0.82, 0.84, 0.95, 0.97],
@@ -69,7 +78,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
     [0.83, 0.84, 0.85, 0.86],
     [0, 1, 1, 0]
   );
-  const yText1 = useTransform(
+  const moveTextY1 = useTransform(
     scrollYProgress,
     [0.83, 0.84, 0.85, 0.86],
     ["10%", "0%", "0%", "-10%"]
@@ -80,14 +89,11 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
     [0.86, 0.87, 0.88, 0.89],
     [0, 1, 1, 0]
   );
-  const yText2 = useTransform(
+  const moveTextY2 = useTransform(
     scrollYProgress,
     [0.86, 0.87, 0.88, 0.89],
     ["10%", "0%", "0%", "-10%"]
   );
-
-  const opacityText3 = useTransform(scrollYProgress, [0.89, 0.9], [0, 1]);
-  const yText3 = useTransform(scrollYProgress, [0.89, 0.9], ["100%", "0%"]);
 
   useAutoScrollDown(scrollYProgress, 0.78, 0.84, 13.5);
   useAutoScrollDown(scrollYProgress, 0.85, 0.87, 14);
@@ -95,62 +101,43 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
 
   return (
     <section className="relative h-screen w-full">
-      <div className="fixed top-0 w-full">
-        <motion.div
-          style={{ opacity }}
-          className="h-screen fixed top-0 w-full bg-awards z-20 "
-        />
-        <motion.div
-          style={{ opacity }}
-          className="w-full h-full fixed z-10 top-0"
-        >
-          <Image
-            src="/hero/bg-hero.webp"
-            alt="background"
-            fill
-            priority
-            className="object-cover w-full h-full"
-          />
-        </motion.div>
-        <motion.div
-          style={{ opacity }}
-          className="w-full h-full fixed z-30 top-0"
-        >
-          <Image
-            src="/hero/birds.png"
-            alt="background"
-            fill
-            priority
-            className="object-cover w-full h-full"
-          />
-        </motion.div>
-        <motion.div
-          style={{ opacity }}
-          className="w-full px-20 fixed z-20 left-1/2 -translate-x-1/2 top-10"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 1281 91"
-          >
-            <path
-              fill="#fff"
-              d="m57.906 48.717 11.208 8.405c-3.025 5.87-7.25 10.629-12.675 14.276-5.426 3.558-11.92 5.336-19.48 5.336-11.296 0-20.235-3.424-26.817-10.273-6.76-6.76-10.14-15.52-10.14-26.283 0-11.118 3.425-20.146 10.274-27.084C17.125 6.244 26.064 2.82 37.093 2.82c7.56 0 13.92 1.601 19.079 4.804 4.803 2.757 8.894 6.626 12.274 11.607l-11.874 8.405c-2.313-3.735-4.98-6.537-8.005-8.405-3.291-1.868-7.16-2.802-11.607-2.802-6.582 0-11.92 2.046-16.01 6.137-4.448 4.448-6.672 10.274-6.672 17.478 0 7.027 2.269 12.809 6.805 17.345 3.824 3.824 8.939 5.737 15.343 5.737 4.98 0 9.428-1.423 13.342-4.27 3.736-2.757 6.448-6.137 8.138-10.14ZM78.367 75V4.288h56.837v13.475H92.376v12.942h26.017V44.18H92.376v17.345h45.496V75H78.367Zm84.037-40.693h24.816c3.38 0 5.871-.667 7.472-2.001 1.779-1.779 2.668-4.003 2.668-6.67 0-2.402-.8-4.404-2.401-6.005-1.424-1.245-3.781-1.868-7.072-1.868h-25.483v16.544ZM148.262 4.288h40.159c7.649 0 13.52 2.046 17.611 6.137 3.825 3.647 5.737 8.761 5.737 15.343 0 6.405-1.956 11.741-5.87 16.01-3.914 4.092-9.339 6.138-16.277 6.138h-27.218V75h-14.142V4.288Zm112.947 13.475V75H247.2V17.763h-27.217V4.288h68.444v13.475h-27.218Zm81.881 11.341L307.067 75h-9.606V4.288h14.009v45.896l35.889-45.896h9.74V75H343.09V29.104Zm58.696-4.803h-10.54c-3.914 0-6.76.89-8.539 2.668-1.779 1.601-2.668 4.136-2.668 7.605 0 3.647 1.067 6.27 3.202 7.872 1.69 1.334 4.58 2.001 8.672 2.001h9.873V24.301Zm14.009 0v20.146h10.14c3.824 0 6.626-.667 8.405-2.001 2.135-1.601 3.202-4.225 3.202-7.872 0-3.38-.889-5.96-2.668-7.738-1.868-1.69-4.714-2.535-8.539-2.535h-10.54Zm11.34 33.621h-11.34V75h-14.009V57.922h-11.341c-7.827 0-13.92-2.179-18.278-6.537-4.003-4.003-6.004-9.606-6.004-16.81 0-7.383 2.135-13.21 6.404-17.479 4.181-4.18 10.407-6.27 18.679-6.27h10.54V.819h14.009v10.007h10.54c8.094 0 14.32 2.09 18.678 6.27 4.27 4.27 6.405 10.096 6.405 17.478 0 7.205-2.002 12.808-6.004 16.81-4.359 4.36-10.451 6.538-18.279 6.538Zm78.825-28.818L469.937 75h-9.606V4.288h14.009v45.896l35.889-45.896h9.74V75H505.96V29.104Zm73.238-24.816h14.009v57.503h12.275v29.22h-12.275V75h-57.37V4.288h14.143v57.237h29.218V4.288Zm80.12 24.816L623.295 75h-9.606V4.288h14.009v45.896l35.89-45.896h9.739V75h-14.009V29.104Zm43.62 5.203h24.816c3.38 0 5.87-.667 7.471-2.001 1.779-1.779 2.669-4.003 2.669-6.67 0-2.402-.801-4.404-2.402-6.005-1.423-1.245-3.78-1.868-7.071-1.868h-25.483v16.544ZM688.796 4.288h40.159c7.649 0 13.519 2.046 17.611 6.137 3.825 3.647 5.737 8.761 5.737 15.343 0 6.405-1.957 11.741-5.871 16.01-3.913 4.092-9.339 6.138-16.277 6.138h-27.217V75h-14.142V4.288ZM794.623 16.43c-6.316 0-11.608 2.18-15.877 6.538-4.181 4.358-6.271 9.962-6.271 16.81 0 6.85 2.09 12.453 6.271 16.811 4.269 4.359 9.561 6.538 15.877 6.538 6.404 0 11.696-2.18 15.876-6.538 4.27-4.358 6.405-9.962 6.405-16.81 0-6.85-2.135-12.453-6.405-16.811-4.18-4.359-9.472-6.538-15.876-6.538Zm26.15 49.899c-6.938 6.938-15.655 10.406-26.15 10.406-10.496 0-19.213-3.468-26.15-10.406-6.938-7.027-10.407-15.877-10.407-26.55 0-10.674 3.469-19.48 10.407-26.417 6.937-7.027 15.654-10.54 26.15-10.54 10.495 0 19.212 3.513 26.15 10.54 7.026 6.937 10.54 15.743 10.54 26.416 0 10.674-3.514 19.524-10.54 26.55Zm35.272-4.27h27.618c4.536 0 7.56-.667 9.072-2 2.046-1.602 3.069-4.092 3.069-7.472 0-3.024-.845-5.16-2.535-6.404-1.868-1.602-4.714-2.402-8.539-2.402h-28.685v18.278Zm0-31.22h26.017c3.113 0 5.337-.444 6.671-1.334 1.779-1.156 2.668-3.113 2.668-5.87 0-2.402-.889-4.136-2.668-5.204-1.601-.8-3.469-1.2-5.604-1.2h-27.084v13.608Zm-14.142-26.55h38.825c9.517 0 16.277 2.001 20.279 6.004 3.025 3.024 4.537 6.938 4.537 11.74 0 5.604-1.957 10.052-5.871 13.343 3.291 1.334 5.915 3.646 7.872 6.937 1.779 3.203 2.668 6.76 2.668 10.674 0 6.315-2.001 11.474-6.004 15.477C899.94 72.82 893.625 75 885.264 75h-43.361V4.288Zm107.542 20.813-9.34 18.946h18.812L949.445 25.1ZM974.261 75l-8.673-17.478h-32.154L925.029 75h-15.477l34.689-70.712h10.54L989.737 75h-15.476Zm64.819 0V43.246h-32.15V75h-14.144V4.288h14.144v25.616h32.15V4.288h14.14V75h-14.14Zm76.29 0V43.246h-32.15V75h-14.15V4.288h14.15v25.616h32.15V4.288h14.14V75h-14.14Zm57.08-49.899-9.34 18.946h18.81l-9.47-18.946ZM1197.26 75l-8.67-17.478h-32.15L1148.03 75h-15.48l34.69-70.712h10.54L1212.74 75h-15.48Zm50.66-28.285L1230.3 75h-16.54l18.68-29.486c-4.89-1.067-8.85-3.113-11.87-6.137-3.38-3.38-5.07-8.005-5.07-13.875 0-6.227 1.82-11.163 5.47-14.81 4.26-4.27 10.89-6.404 19.87-6.404h39.23V75h-14.01V46.715h-18.14Zm18.14-29.219h-26.55c-3.11 0-5.43.579-6.94 1.735-1.87 1.156-2.8 3.157-2.8 6.004 0 2.668.85 4.714 2.54 6.137 1.69 1.423 4.35 2.135 8 2.135h25.75v-16.01Z"
+      <motion.section
+        style={{ opacity }}
+        className="relative top-0 w-full h-full z-0 pointer-events-none snap-end"
+      >
+        <div className="h-full w-full flex flex-col justify-between fixed top-0 left-0 gap-4 px-20 py-10 z-20 text-white">
+          <div className="w-full flex flex-col">
+            <div className="w-full relative z-20">
+              <FamilyText />
+            </div>
+            <p className="text-white title-clamp blur-gray px-6 py-5 w-1/2 1xl:w-1/2 self-end text-right leading-8 relative z-10">
+              Вода TURAN отмечена более чем 20 республиканскими и международными
+              наградами за безупречное качество,природный состав и высокие
+              производственные стандарты
+            </p>
+            <Image
+              src="/awards/bg-family.webp"
+              alt="background"
+              fill
+              priority
+              className="object-cover w-full h-full fixed z-0 top-0"
+              unoptimized
             />
-          </svg>
-        </motion.div>
-        <div className="fixed z-30 inset-0 p-20 h-full w-full">
-          <motion.div
-            style={{ opacity: opacityText1, y: yText1 }}
-            className="text-white flex flex-col items-end text-right h-full leading-tight justify-end w-full"
-          >
-            <div className="flex flex-col items-end max-w-full 1xl:max-w-2/3 2xl:max-w-2/3 justify-between h-2/3 gap-4">
-              <p className="title-clamp blur-gray">
-                Вода TURAN отмечена более чем 20 республиканскими и
-                международными наградами за безупречное качество,природный
-                состав и высокие производственные стандарты
-              </p>
-              <div className="flex gap-4 items-center">
+            <Image
+              src="/awards/family.webp"
+              alt="background"
+              fill
+              priority
+              className="object-cover w-full h-full fixed translate-y-8 z-20 bottom-0"
+              unoptimized
+            />
+          </div>
+          {showText1 && (
+            <div className="h-full w-full flex flex-col gap-4 justify-end items-end">
+              <motion.div
+                style={{ opacity: opacityText1, y: moveTextY1 }}
+                className="flex gap-4 items-center self-end relative z-20"
+              >
                 {golds.map((gold, i) => (
                   <Image
                     key={i}
@@ -162,29 +149,25 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
                     unoptimized
                   />
                 ))}
-              </div>
-              <p className="text-clamp blur-gray">
+              </motion.div>
+              <motion.p
+                style={{ opacity: opacityText1, y: moveTextY1 }}
+                className="text-clamp blur-gray px-6 py-5 self-end text-right w-1/2 relative z-20 leading-tight"
+              >
                 Вот уже несколько лет подряд TURAN получает высшую награду от
                 Monde Selection — одного из самых авторитетных европейских
                 институтов оценки качества. Эта независимая экспертиза
                 проводится в Брюсселе, и включает слепую дегустацию, анализ
                 состава и производственного процесса
-              </p>
+              </motion.p>
             </div>
-          </motion.div>
-        </div>
-        <div className="fixed z-30 inset-0 p-20 h-full w-full">
-          <motion.div
-            style={{ opacity: opacityText2, y: yText2 }}
-            className="text-white flex flex-col items-end text-right h-full leading-tight justify-end w-full"
-          >
-            <div className="flex flex-col items-end max-w-full 1xl:max-w-2/3 2xl:max-w-2/3 justify-between h-2/3 gap-4">
-              <p className="title-clamp blur-gray">
-                Вода TURAN отмечена более чем 20 республиканскими и
-                международными наградами за безупречное качество,природный
-                состав и высокие производственные стандарты
-              </p>
-              <div className="flex gap-4 items-center">
+          )}
+          {showText2 && (
+            <div className="h-full w-full flex flex-col gap-4 justify-end items-end relative z-20">
+              <motion.div
+                style={{ opacity: opacityText2, y: moveTextY2 }}
+                className="flex gap-4 items-center self-end"
+              >
                 {silvers.map((silver, i) => (
                   <Image
                     key={i}
@@ -196,36 +179,34 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
                     unoptimized
                   />
                 ))}
-              </div>
-              <p className="text-clamp blur-gray">
+              </motion.div>
+              <motion.p
+                style={{ opacity: opacityText2, y: moveTextY2 }}
+                className="text-clamp blur-gray px-6 py-5 self-end text-right w-1/2 leading-tight"
+              >
                 TURAN — одна из немногих вод в регионе, прошедших проверку SGS
                 Institut Fresenius. Это мировой эталон лабораторного контроля,
                 которому доверяют более 160 лет. Институт оценивает не только
                 воду в бутылке, но и весь путь от скважины до розлива:санитарные
                 условия, оборудование, технологии
-              </p>
-            </div>{" "}
-          </motion.div>
-        </div>
-        <div className="fixed z-30 inset-0 p-20 h-full w-full">
-          <motion.div
-            style={{ opacity: opacityText3, y: yText3 }}
-            className="text-white flex flex-col items-end text-right h-full leading-tight justify-end w-full"
-          >
-            <div className="w-full flex justify-between gap-8 items-center px-8 py-2">
+              </motion.p>
+            </div>
+          )}
+          {showText3 && (
+            <div className="w-full flex justify-between gap-5 relative z-20">
               <div className="flex flex-col gap-4">
                 <MenuButton>АССОРТИМЕНТ</MenuButton>
                 <MenuButton>ПОЛЕЗНО ЗНАТЬ</MenuButton>
               </div>
-              {/* Правая колонка */}
+
               <div className="flex flex-col items-end gap-4">
                 <MenuButton>ДОСТАВКА</MenuButton>
                 <MenuButton>СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ</MenuButton>
               </div>
             </div>
-          </motion.div>
+          )}
         </div>
-      </div>
+      </motion.section>
     </section>
   );
 }

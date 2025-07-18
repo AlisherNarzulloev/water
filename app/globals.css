@@ -24,16 +24,14 @@
 
   .blur-blue {
     border-radius: 10px;
-    background-color: rgba(0, 160, 224, 0.2);
+    background-color: rgba(0, 160, 223, 0.2);
     backdrop-filter: blur(6px);
-    padding: 1rem;
   }
 
   .blur-gray {
     border-radius: 10px;
-    background-color: rgba(184, 184, 184, 0.2);
+    background-color: rgba(119, 119, 119, 0.2);
     backdrop-filter: blur(6px);
-    padding: 1rem;
   }
 
   .bg-awards {

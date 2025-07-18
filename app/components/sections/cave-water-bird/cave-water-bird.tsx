@@ -13,19 +13,19 @@ export default function CaveWaterBird({
 }: CaveWaterBirdSectionProps) {
   const opacity = useTransform(
     scrollYProgress,
-    [0.07, 0.12, 0.359, 0.36],
+    [0.14, 0.16, 0.4, 0.41],
     [0, 1, 1, 0]
   );
 
   const moveXCloud1 = useTransform(
     scrollYProgress,
-    [0.35, 0.366, 0.38, 0.4],
+    [0.39, 0.41, 0.43, 0.45],
     ["-200%", "0%", "0%", "-200%"]
   );
 
   const moveXCloud2 = useTransform(
     scrollYProgress,
-    [0.35, 0.366, 0.38, 0.4],
+    [0.39, 0.41, 0.43, 0.45],
     ["200%", "0%", "0%", "200%"]
   );
 
@@ -34,7 +34,7 @@ export default function CaveWaterBird({
       style={{ opacity }}
       className="w-screen max-h-[300vh] h-full z-10 overflow-hidden"
     >
-      <div className="fixed top-0 z-20">
+      <div className="fixed top-0 z-30">
         <motion.div style={{ x: moveXCloud1 }} className="fixed top-0 z-20">
           <Image
             src={"/clouds/cloud1.webp"}
@@ -56,7 +56,7 @@ export default function CaveWaterBird({
         </motion.div>
       </div>
 
-      <div className="absolute inset-0 bg-cave-water-bird max-h-[750vh] 1xl:max-h-[670vh] 2xl:max-h-[600vh] h-full w-full bg-fit 2xl:bg-contain bg-top z-0 2xl:top-[110vh] bg-no-repeat" />
+      <div className="absolute inset-0 bg-cave-water-bird max-h-[750vh] 1xl:max-h-[670vh] 2xl:max-h-[600vh] h-full w-full bg-fit 1xl:bg-cover  bg-top z-0 top-[90vh] 1xl:top-[90vh] 2xl:top-[155vh] bg-no-repeat" />
 
       <div className="relative z-10 h-full">
         <CaveSection scrollYProgress={scrollYProgress} />
