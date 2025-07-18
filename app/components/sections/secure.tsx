@@ -102,7 +102,7 @@ export default function SecureSection({ scrollYProgress }: SecureSectionProps) {
   ]);
 
   useAutoScrollDown(scrollYProgress, 0.67, 0.72, 11.5);
-  useAutoScrollDown(scrollYProgress, 0.73, 0.75, 12.5);
+  useAutoScrollDown(scrollYProgress, 0.73, 0.75, 12.4);
 
   return (
     <section className="relative h-screen w-full">

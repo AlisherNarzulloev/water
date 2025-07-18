@@ -72,7 +72,7 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
   const yText1 = useTransform(
     scrollYProgress,
     [0.83, 0.84, 0.85, 0.86],
-    ["100%", "0%", "0%", "-100%"]
+    ["10%", "0%", "0%", "-10%"]
   );
 
   const opacityText2 = useTransform(
@@ -83,13 +83,13 @@ export default function AwardSection({ scrollYProgress }: AwardSectionProps) {
   const yText2 = useTransform(
     scrollYProgress,
     [0.86, 0.87, 0.88, 0.89],
-    ["100%", "0%", "0%", "-100%"]
+    ["10%", "0%", "0%", "-10%"]
   );
 
   const opacityText3 = useTransform(scrollYProgress, [0.89, 0.9], [0, 1]);
   const yText3 = useTransform(scrollYProgress, [0.89, 0.9], ["100%", "0%"]);
 
-  useAutoScrollDown(scrollYProgress, 0.76, 0.84, 13.5);
+  useAutoScrollDown(scrollYProgress, 0.78, 0.84, 13.5);
   useAutoScrollDown(scrollYProgress, 0.85, 0.87, 14);
   useAutoScrollDown(scrollYProgress, 0.88, 0.97, 15);
 

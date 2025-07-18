@@ -1,6 +1,4 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
-import { ScrollStep } from "../../ui/scroll-step";
-import { createScrollBlocks } from "@/app/utils/createScrollBlock";
 import { useAutoScrollDown } from "@/app/utils/useAutoScrollDown";
 import Image from "next/image";
 
@@ -26,54 +24,32 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
     ["50%", "-10%", "0%", "100%"]
   );
 
+  const moveTextY1 = useTransform(
+    scrollYProgress,
+    [0.28, 0.29, 0.31, 0.33],
+    ["10%", "0%", "0%", "-10%"]
+  );
+
+  const opacityText1 = useTransform(
+    scrollYProgress,
+    [0.28, 0.29, 0.31, 0.33],
+    [0, 1, 1, 0]
+  );
+
+  const moveTextY2 = useTransform(
+    scrollYProgress,
+    [0.33, 0.35, 0.37, 0.39],
+    ["10%", "0%", "0%", "-10%"]
+  );
+
+  const opacityText2 = useTransform(
+    scrollYProgress,
+    [0.33, 0.35, 0.37, 0.39],
+    [0, 1, 1, 0]
+  );
+
   useAutoScrollDown(scrollYProgress, 0.28, 0.31, 4.9);
   useAutoScrollDown(scrollYProgress, 0.31, 0.37, 5.7);
-
-  const blocks = createScrollBlocks(0.27, 0.03, [
-    {
-      left: (
-        <p className="text-white text-clamp blur-blue p-4 leading-tight">
-          pH — это показатель кислотно-щелочного равновесия. Вода с pH 7,5 мягко
-          поддерживает внутренний баланс, не вызывая ни закисления, ни
-          ощелачивания. Она легко усваивается, не перегружает организм,
-          способствует нормализации обменных процессов и помогает телу сохранять
-          внутреннюю стабильность, особенно при умственных и физических
-          нагрузках, стрессах или нарушениях питания
-        </p>
-      ),
-      right: (
-        <p className="text-white text-clamp blur-blue p-4 leading-tight">
-          Такой уровень кислотно-щелочного баланса максимально близок к
-          внутренней среде человека, особенно к плазме крови и лимфе.Это делает
-          воду TURAN не просто утоляющей жажду, а физиологически подходящей для
-          ежедневного употребления.
-        </p>
-      ),
-    },
-    {
-      left: (
-        <p className="text-white text-clamp blur-blue p-4 leading-tight">
-          pH — это показатель кислотно-щелочного равновесия. Вода с pH 7,5 мягко
-          поддерживает внутренний баланс, не вызывая ни закисления, ни
-          ощелачивания. Она легко усваивается, не перегружает организм,
-          способствует нормализации обменных процессов и помогает телу сохранять
-          внутреннюю стабильность, особенно при умственных и физических
-          нагрузках, стрессах или нарушениях питания
-        </p>
-      ),
-      right: (
-        <p className="text-white text-clamp blur-blue p-4 leading-tight">
-          Многие производители стремятся добиться «идеального» pH с помощью
-          химической коррекции — добавляя соли или изменяя структуру воды. TURAN
-          не нуждается в этом. Её сбалансированный уровень pH — естественный
-          результат прохождения через глубинные геологические породы,
-          сформированные миллионы лет назад. Природа сама отрегулировала этот
-          баланс — мы просто бережно сохраняем его.
-        </p>
-      ),
-      reverse: true,
-    },
-  ]);
 
   return (
     <section className="relative w-full h-screen">
@@ -141,27 +117,43 @@ export default function BirdSection({ scrollYProgress }: BirdSectionProps) {
             unoptimized
           />
         </motion.div>
-
-        <div className="relative h-full w-full">
-          <ScrollStep
-            key={0}
-            progress={scrollYProgress}
-            range={blocks[0].range}
-            left={blocks[0].right}
-            right={blocks[0].left}
-            leftAlign="bottom"
-            rightAlign="center"
-          />
-          <ScrollStep
-            key={1}
-            progress={scrollYProgress}
-            range={blocks[1].range}
-            left={blocks[1].right}
-            right={blocks[1].left}
-            leftAlign="bottom"
-            rightAlign="center"
-          />
-        </div>
+        <motion.div
+          style={{ opacity: opacityText1, y: moveTextY1 }}
+          className="fixed top-0 p-20 bottom-0 left-0 h-full w-full flex flex-col justify-between"
+        >
+          <p className="text-white title-clamp blur-blue p-4 leading-tight max-w-2/3 self-end translate-y-14 2xl:translate-y-32 text-right">
+            Вода TURAN отличается не только чистотой,но и естественным уровнем
+            pH. 7,5 — это именно тот показатель, к которому стремится сам
+            организм
+          </p>
+          <p className="text-white text-clamp blur-blue p-4 leading-tight max-w-2/3">
+            Такой уровень кислотно-щелочного баланса максимально близок к
+            внутренней среде человека, особенно к плазме крови и лимфе.Это
+            делает воду TURAN не просто утоляющей жажду, а физиологически
+            подходящей для ежедневного употребления.
+          </p>
+        </motion.div>
+        <motion.div
+          style={{ opacity: opacityText2, y: moveTextY2 }}
+          className="fixed top-0 p-20 bottom-0 left-0 h-full w-full flex flex-col justify-between"
+        >
+          <p className="text-white text-clamp blur-blue p-4 leading-tight max-w-2/3 self-end translate-y-14 2xl:translate-y-32 text-right">
+            pH — это показатель кислотно-щелочного равновесия. Вода с pH 7,5
+            мягко поддерживает внутренний баланс, не вызывая ни закисления, ни
+            ощелачивания. Она легко усваивается, не перегружает организм,
+            способствует нормализации обменных процессов и помогает телу
+            сохранять внутреннюю стабильность, особенно при умственных и
+            физических нагрузках, стрессах или нарушениях питания
+          </p>
+          <p className="text-white text-clamp blur-blue p-4 leading-tight max-w-2/3">
+            Многие производители стремятся добиться «идеального» pH с помощью
+            химической коррекции — добавляя соли или изменяя структуру воды.
+            TURAN не нуждается в этом. Её сбалансированный уровень pH —
+            естественный результат прохождения через глубинные геологические
+            породы, сформированные миллионы лет назад. Природа сама
+            отрегулировала этот баланс — мы просто бережно сохраняем его.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
